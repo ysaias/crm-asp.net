@@ -1,0 +1,98 @@
+﻿* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0%;
+    padding: 0%;
+    background: url(../img/fondito.jpg) no-repeat center center fixed;
+    background-size: cover;
+    font-family: sans-serif;
+    height: 100vh;
+}
+
+.login {
+    width: 320px;
+    height: 558px;
+    background: #000;
+    color: #fff;
+    opacity: 0.7;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    padding: 140px 40px;
+    border-radius: 10%;
+}
+
+.registroLogin {
+    width: 320px;
+    height: 600px;
+    background: #000;
+    color: #fff;
+    opacity: 0.7;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    padding: 140px 40px;
+    border-radius: 10%;
+}
+
+.avatar {
+    width: 47%;
+    height: 42%;
+    position: absolute;
+    top: -70px;
+    left: calc(50% - 20%);
+}
+
+h1 {
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 40px;
+}
+
+label {
+    margin: 0;
+    padding: 0 0 10px;
+    font-weight: bold;
+    display: block;
+    height: 25px;
+    width: 317px;
+}
+
+input {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.texto {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    color: #fff;
+    font-size: 16px;
+    height: 30px;
+}
+
+.btn {
+    border: none;
+    outline: none;
+    height: 30px;
+    background: rgb(87, 0, 0);
+    color: #fff;
+    border-radius: 10px;
+    font-size: 18px;
+    width: 100%;
+}
+
+    .btn:hover {
+        background: brown;
+    }
+
+#Label1 {
+    padding-right: 50%;
+}
