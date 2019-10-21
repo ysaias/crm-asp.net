@@ -8,6 +8,12 @@ using System.Web;
 /// </summary>
 public class ProductoDAO
 {
+
+
+    public int idProducto { get; set; }
+    public string nombre { get; set; }
+    public string descripcion { get; set; }
+    public int LineaNegocio_Producto { get; set; }
     public ProductoDAO()
     {
         //

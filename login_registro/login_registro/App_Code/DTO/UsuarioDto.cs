@@ -93,7 +93,7 @@ public class UsuarioDto
 
             MailMessage mail = new MailMessage();
             SmtpClient smtpCli = new SmtpClient();
-            mail.From = new MailAddress("jose.cadima@aetest.net");
+            mail.From = new MailAddress("angelsistemas@itn.lyv.mybluehost.me");
             mail.To.Add(new MailAddress(user.correo));
 
             string message =
@@ -104,9 +104,9 @@ public class UsuarioDto
             mail.Body = message;
             mail.IsBodyHtml = true;
             mail.Subject = "Activacion de Cuenta";
-            smtpCli.Host = "mail.aetest.net";
+            smtpCli.Host = "mail.itn.lyv.mybluehost.me";
             smtpCli.Port = 587;
-            smtpCli.Credentials = new NetworkCredential("jose.cadima@aetest.net", "ysNwm0axilRj");
+            smtpCli.Credentials = new NetworkCredential("angelsistemas@itn.lyv.mybluehost.me", "ysNwm0axilRj");
             smtpCli.EnableSsl = true;
             smtpCli.Send(mail);
         }

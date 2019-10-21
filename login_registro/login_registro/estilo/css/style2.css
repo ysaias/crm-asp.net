@@ -34,12 +34,11 @@ h1 {
 }
 
 label {
-    margin: 0;
+    margin: 2px 0 0 0;
     padding: 0 0 10px;
     font-weight: bold;
     display: block;
     height: 25px;
-    width: 317px;
     float: left;
 }
 
@@ -54,13 +53,20 @@ input {
 
 .texto {
     background: transparent;
-    border: none;
     border-bottom: 1px solid #fff;
     outline: none;
     color: #fff;
     font-size: 16px;
-    height: 30px;
     float: left;
+    border-left-style: none;
+    border-left-color: inherit;
+    border-left-width: medium;
+    border-right-style: none;
+    border-right-color: inherit;
+    border-right-width: medium;
+    border-top-style: none;
+    border-top-color: inherit;
+    border-top-width: medium;
 }
 
 .btn {
