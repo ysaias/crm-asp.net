@@ -1,13 +1,13 @@
 use CRM;
 
 create table tblLineaNegocio(
-idLineaNegocio int primary key not null,
+idLineaNegocio int IDENTITY(1,1) primary key not null,
 nombre varchar(50),
 descripcion text,
 Empresa_LineaNegocio int);
 
 create table tblProducto(
-idProducto int primary key not null,
+idProducto int IDENTITY(1,1) primary key not null,
 nombre varchar(50),
 descripcion text,
 LineaNegocio_Producto int);
