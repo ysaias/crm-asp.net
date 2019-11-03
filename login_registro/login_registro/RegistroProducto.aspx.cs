@@ -46,6 +46,7 @@ public partial class RegistroProducto : System.Web.UI.Page
                 return;
             }
            
+
             
             ProductoDAO producto = new ProductoDAO();
             producto.nombre = nombre;
@@ -60,7 +61,7 @@ public partial class RegistroProducto : System.Web.UI.Page
         }
         catch (Exception E) {
             
-            msgError.Text = "Error al optener los datos";
+            msgError.Text = "Error al optener los datos" + E.Message;
         }
     }
     public void vaciar() {

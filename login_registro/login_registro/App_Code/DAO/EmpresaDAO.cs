@@ -4,18 +4,16 @@ using System.Linq;
 using System.Web;
 
 /// <summary>
-/// Descripción breve de ProductoDAO
+/// Descripción breve de EmpresaDAO
 /// </summary>
-public class ProductoDAO
+public class EmpresaDAO
 {
-
-
-    public int idProducto { get; set; }
+    public int empresaId { get; set; }
     public string nombre { get; set; }
-    public string descripcion { get; set; }
-    public int LineaNegocio_Producto { get; set; }
+    public string Descripcion { get; set; }
+    public int UsuarioId { get; set; }
 
-    public ProductoDAO()
+    public EmpresaDAO()
     {
         //
         // TODO: Agregar aquí la lógica del constructor

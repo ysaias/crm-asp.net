@@ -112,12 +112,11 @@ public partial class Registro : System.Web.UI.Page
             vaciar();
             UsuarioDto.insertCorreo(usuario);
             Response.Redirect("Login.aspx");
-
-
+           
         }
         catch (Exception E) {
             
-            msgError.Text = "Error al optener los datos";
+            msgError.Text = "Error al optener los datos" + E.Message;
         }
     }
     public void vaciar() {
