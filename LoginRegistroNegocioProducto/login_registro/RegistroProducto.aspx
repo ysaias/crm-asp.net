@@ -60,8 +60,8 @@
                
                 <asp:TextBox ID="descripcionTxt" cssClass="texto" name="user" runat="server"  placeholder="Ingrese la descripcion"></asp:TextBox>
                 <label>Linea Negocio:</label>
-                <asp:DropDownList ID="LineaNegocio_ProductoTxt" CssClass="texto"  runat="server" placeholder="Ingrese la Linea De Negocio " DataSourceID="ObjectDataSource1" DataTextField="nombre" DataValueField="idLineaNegocio" Height="46px" Width="274px"></asp:DropDownList>
-                <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetAllLineaNegocio" TypeName="LineaNegocioDSTableAdapters.GetAllLineaNegocioTableAdapter"></asp:ObjectDataSource>
+                <asp:DropDownList ID="LineaNegocio_ProductoTxt" CssClass="texto"  runat="server" placeholder="Ingrese la Linea De Negocio "  DataTextField="nombre" DataValueField="idLineaNegocio" Height="46px" Width="274px"></asp:DropDownList>
+                <asp:ObjectDataSource  runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetAllLineaNegocio" TypeName="LineaNegocioDSTableAdapters.GetAllLineaNegocioTableAdapter"></asp:ObjectDataSource>
                 <asp:Button ID="guardarBtn" CssClass="btn" type="submit" runat="server" Text="GUARDAR" OnClick="registrarProducto" />
               
             </form>

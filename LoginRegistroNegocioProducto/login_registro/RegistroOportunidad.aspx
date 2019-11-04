@@ -78,17 +78,17 @@
                   <div id="formOportunidad2" >
           
                         <label>Negocio  :</label>
-                        <asp:DropDownList ID="ListNegocio" CssClass="texto listas"  runat="server" placeholder="Ingrese la Linea De Negocio " DataSourceID="ObjectDataSource1" DataTextField="nombre" DataValueField="idLineaNegocio"  ></asp:DropDownList>
-                        <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetAllLineaNegocio" TypeName="LineaNegocioDSTableAdapters.GetAllLineaNegocioTableAdapter"></asp:ObjectDataSource>
+                        <asp:DropDownList ID="ListNegocio" CssClass="texto listas"  runat="server" placeholder="Ingrese la Linea De Negocio "  DataTextField="nombre" DataValueField="idLineaNegocio"  ></asp:DropDownList>
+                        <asp:ObjectDataSource  runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetAllLineaNegocio" TypeName="LineaNegocioDSTableAdapters.GetAllLineaNegocioTableAdapter"></asp:ObjectDataSource>
                         <label>Producto :</label>
-                        <asp:DropDownList ID="ListProducto" CssClass="texto listas"  runat="server" placeholder="Ingrese la Linea De Negocio " DataSourceID="ObjectDataSource1" DataTextField="nombre" DataValueField="idLineaNegocio"  ></asp:DropDownList>
-                        <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetAllLineaNegocio" TypeName="LineaNegocioDSTableAdapters.GetAllLineaNegocioTableAdapter"></asp:ObjectDataSource>
+                        <asp:DropDownList ID="ListProducto" CssClass="texto listas"  runat="server" placeholder="Ingrese la Linea De Negocio "  DataTextField="nombre" DataValueField="idLineaNegocio"  ></asp:DropDownList>
+                        <asp:ObjectDataSource  runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetAllLineaNegocio" TypeName="LineaNegocioDSTableAdapters.GetAllLineaNegocioTableAdapter"></asp:ObjectDataSource>
                         <label>Ejecutivo:</label>
-                        <asp:DropDownList ID="ListEjecutivo" CssClass="texto listas"  runat="server" placeholder="Ingrese la Linea De Negocio " DataSourceID="ObjectDataSource1" DataTextField="nombre" DataValueField="idLineaNegocio"  ></asp:DropDownList>
-                        <asp:ObjectDataSource ID="ObjectDataSource3" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetAllLineaNegocio" TypeName="LineaNegocioDSTableAdapters.GetAllLineaNegocioTableAdapter"></asp:ObjectDataSource>
+                        <asp:DropDownList ID="ListEjecutivo" CssClass="texto listas"  runat="server" placeholder="Ingrese la Linea De Negocio "  DataTextField="nombre" DataValueField="idLineaNegocio"  ></asp:DropDownList>
+                        <asp:ObjectDataSource  runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetAllLineaNegocio" TypeName="LineaNegocioDSTableAdapters.GetAllLineaNegocioTableAdapter"></asp:ObjectDataSource>
                         <label>Origen   :</label>
-                        <asp:DropDownList ID="DropDownList2" CssClass="texto listas"  runat="server" placeholder="Ingrese la Linea De Negocio " DataSourceID="ObjectDataSource1" DataTextField="nombre" DataValueField="idLineaNegocio"  ></asp:DropDownList>
-                        <asp:ObjectDataSource ID="ObjectDataSource4" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetAllLineaNegocio" TypeName="LineaNegocioDSTableAdapters.GetAllLineaNegocioTableAdapter"></asp:ObjectDataSource>
+                        <asp:DropDownList ID="DropDownList2" CssClass="texto listas"  runat="server" placeholder="Ingrese la Linea De Negocio "  DataTextField="nombre" DataValueField="idLineaNegocio"  ></asp:DropDownList>
+                        <asp:ObjectDataSource  runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetAllLineaNegocio" TypeName="LineaNegocioDSTableAdapters.GetAllLineaNegocioTableAdapter"></asp:ObjectDataSource>
                         <label>Nota:</label>
                         <asp:TextBox ID="TextBox3" cssClass="texto" name="user" runat="server"  placeholder="Describa el Prospecto"></asp:TextBox>
                         
@@ -106,11 +106,11 @@
                         <asp:TextBox id="hora" class="form-control fecha" type="text" data-autoclose="true" runat="server">
                         </asp:TextBox>
                         <label>Motivo:</label>
-                        <asp:DropDownList ID="DropDownList1" CssClass="texto listas"  runat="server" placeholder="Ingrese la Linea De Negocio " DataSourceID="ObjectDataSource1" DataTextField="nombre" DataValueField="idLineaNegocio"  ></asp:DropDownList>
-                        <asp:ObjectDataSource ID="ObjectDataSource5" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetAllLineaNegocio" TypeName="LineaNegocioDSTableAdapters.GetAllLineaNegocioTableAdapter"></asp:ObjectDataSource>
+                        <asp:DropDownList ID="DropDownList1" CssClass="texto listas"  runat="server" placeholder="Ingrese la Linea De Negocio "  DataTextField="nombre" DataValueField="idLineaNegocio"  ></asp:DropDownList>
+                        <asp:ObjectDataSource  runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetAllLineaNegocio" TypeName="LineaNegocioDSTableAdapters.GetAllLineaNegocioTableAdapter"></asp:ObjectDataSource>
                         <label>Tipo:</label>
-                        <asp:DropDownList ID="DropDownList3" CssClass="texto listas"  runat="server" placeholder="Ingrese la Linea De Negocio " DataSourceID="ObjectDataSource1" DataTextField="nombre" DataValueField="idLineaNegocio"  ></asp:DropDownList>
-                        <asp:ObjectDataSource ID="ObjectDataSource6" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetAllLineaNegocio" TypeName="LineaNegocioDSTableAdapters.GetAllLineaNegocioTableAdapter"></asp:ObjectDataSource>
+                        <asp:DropDownList ID="DropDownList3" CssClass="texto listas"  runat="server" placeholder="Ingrese la Linea De Negocio "  DataTextField="nombre" DataValueField="idLineaNegocio"  ></asp:DropDownList>
+                        <asp:ObjectDataSource  runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetAllLineaNegocio" TypeName="LineaNegocioDSTableAdapters.GetAllLineaNegocioTableAdapter"></asp:ObjectDataSource>
                         <label>Nota:</label>
                         <asp:TextBox ID="TextBox10" cssClass="texto" name="user" runat="server"  placeholder="Descripcion de lo que se debe hacer"></asp:TextBox>
                         
