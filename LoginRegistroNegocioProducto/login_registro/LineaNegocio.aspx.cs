@@ -7,79 +7,107 @@ using System.Web.UI.WebControls;
 
 public partial class LineaNegocio : System.Web.UI.Page
 {
+    public int NegocioId
+    {
+        set { ProductoIdHiddenField.Value = value.ToString(); }
+        get
+        {
+            int negocioId = 0;
+            try
+            {
+                negocioId = Convert.ToInt32(ProductoIdHiddenField.Value);
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return negocioId;
+        }
+    }
+
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        if (!IsPostBack)
+        {
+            ProcesarParametros();
+        }
     }
 
-    protected void registrarNegocio(object sender, EventArgs e)
+    private void ProcesarParametros()
     {
-        msgError.Text = "";
+        if (Request.QueryString["idLineaNegocio"] != null && !string.IsNullOrEmpty(Request.QueryString["idLineaNegocio"]))
+        {
+            try
+            {
+                NegocioId = Convert.ToInt32(Request.QueryString["idLineaNegocio"]);
+            }
+            catch (Exception ex)
+            {
 
+            }
+        }
+        if (NegocioId > 0)
+        {
+            System.Diagnostics.Debug.WriteLine("Entro aqui " + NegocioId);
+            LabelTitle.Text = "Editar";
+            CargarDatos(NegocioId);
+        }
+        else
+            LabelTitle.Text = "Nuevo";
+    }
 
+    private void CargarDatos(int productoId)
+    {
         try
         {
-            string nombre = (nombreTxt.Text).Trim();
-            string descripcion = (descripcionTxt.Text).Trim();
-
-
-            /*Se necestita crear este campo en la pagina html 
-             * 
-            / string empresa = (empresaTxt.Text).Trim();
-            */
-
-
-
-             if (nombre.Equals(""))
-             {
-                 msgError.Text = "Ingrese un Nombre Negocio";
-                 return;
-
-             }
-             if (descripcion.Equals(""))
-             {
-                 msgError.Text = "Ingrese la descripcion del Negocio";
-                 return;
-
-             }
-
-             if (descripcion.Length < 15)
-             {
-                 msgError.Text = "la descripcion tiene que ser mayor a 15 ";
-                 return;
-             }
-
-            /*
-             *Se necestita crear este campo en la pagina html 
-             * 
-             * if (empresaTxt.Equals(""))
-             {
-                 msgError.Text = "Debe Seleccionar la Empresa";
-                 return;
-             }*/
-
-
-            LineaNegocioDAO negocioDAO = new LineaNegocioDAO();
-            negocioDAO.nombre = nombre;
-            negocioDAO.descripcion = descripcion;
-
-
-            LineaNegocioDto.InsertLineaNegocio(negocioDAO);
-            Response.Redirect("index.aspx");
+            LineaNegocioDAO obj = LineaNegocioDto.GetProductoById(productoId);
+            NombreTextBox.Text = obj.nombre;
+            descripcionTextBox.Text = obj.descripcion;
+            empresa_LineaNegocioTxt.Text = obj.empresaId.ToString();
 
 
         }
-        catch (Exception E)
+        catch (Exception ex)
         {
-
-            msgError.Text = "Error al optener los datos" + E.Message;
+            MsgLiteral.Text = "Error al obtener el Negocio";
+            PanelError.Visible = true;
         }
     }
-    public void vaciar()
-    {
-        nombreTxt.Text = "";
-        descripcionTxt.Text = "";
 
-        msgError.Text = "";
+    protected void SaveButton_Click(object sender, EventArgs e)
+    {
+        PanelError.Visible = false;
+        try
+        {
+            int empresa = Convert.ToInt32(empresa_LineaNegocioTxt.Text);
+
+            int negocioId = this.NegocioId;
+            LineaNegocioDAO obj = new LineaNegocioDAO()
+            {
+                idLineaNegocio = negocioId,
+                nombre = NombreTextBox.Text,
+                descripcion = descripcionTextBox.Text,
+                empresaId = empresa
+            };
+
+            if (negocioId > 0)
+                LineaNegocioDto.UpdateProducto(obj);
+            else
+                LineaNegocioDto.InsertProducto(obj);
+        }
+        catch (Exception ex)
+        {
+            MsgLiteral.Text = "Error al guardar el Negocio";
+            PanelError.Visible = true;
+            return;
+        }
+
+        Response.Redirect("ListaLineaNegocio.aspx");
+
+    }
+
+    protected void ObjectDataSource1_Selecting(object sender, ObjectDataSourceSelectingEventArgs e)
+    {
+
     }
 }

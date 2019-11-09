@@ -92,11 +92,14 @@
             
                         <div class="form-group">
                         <label>Linea Negocio:</label>
-                <asp:DropDownList ID="LineaNegocio_ProductoTxt" CssClass="texto"  runat="server" 
-                    placeholder="Ingrese la Linea De Negocio " DataSourceID="ObjectDataSource1"
-                    DataTextField="nombre" DataValueField="idLineaNegocio" Height="46px" ></asp:DropDownList>
-                <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" OldValuesParameterFormatString="original_{0}"
-                SelectMethod="GetAllLineaNegocio" TypeName="LineaNegocioDSTableAdapters.LineaNegocioDAOTableAdapter" OnSelecting="ObjectDataSource1_Selecting"></asp:ObjectDataSource>
+                        <asp:DropDownList ID="LineaNegocio_ProductoTxt" CssClass="texto"  runat="server" 
+                        placeholder="Ingrese la Linea De Negocio " DataSourceID="ObjectDataSource1"
+                        DataTextField="nombre" DataValueField="idLineaNegocio" Height="46px" >
+                        </asp:DropDownList>
+                        <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" OldValuesParameterFormatString="original_{0}"
+                        SelectMethod="GetAllLineaNegocio" TypeName="LineaNegocioDSTableAdapters.LineaNegocioDAOTableAdapter" 
+                        OnSelecting="ObjectDataSource1_Selecting">
+                        </asp:ObjectDataSource>
                         </div>
 
 

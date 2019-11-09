@@ -51,13 +51,80 @@
     </nav>
     </div>
     <div class="registroLineaNegocio">
-            <h1 id="titulo">Negocio</h1>
             <form id="registroLineaNegocio" runat="server" method="post">
-          
-                <asp:TextBox ID="nombreTxt" cssClass="texto" name="user" runat="server"  placeholder="Ingrese Nombre del Negocio"></asp:TextBox>
-                <asp:TextBox ID="descripcionTxt" cssClass="texto" name="user" runat="server"  placeholder="Ingrese la descripcion"></asp:TextBox>              
-                <asp:Button ID="guardarBtn" CssClass="btn" type="submit" runat="server" Text="GUARDAR"  />
-              
+           
+                <div class="row">
+                  <div class="col-12">
+                        <h1>
+                            <asp:Literal runat="server" ID="LabelTitle"></asp:Literal>
+                            Negocio
+                        </h1>            
+                        <asp:HyperLink runat="server" NavigateUrl="ListaLineaNegocio.aspx">
+                            Volver a la Lista de Negocios
+                        </asp:HyperLink>
+
+                        <asp:Panel ID="PanelError" runat="server" Visible="false" CssClass="alert alert-danger" role="alert">
+                            <asp:Literal ID="MsgLiteral" runat="server"></asp:Literal>
+                        </asp:Panel>
+                    </div>
+                </div>
+                
+
+                
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <asp:Label runat="server" AssociatedControlID="NombreTextBox">Nombre</asp:Label>
+                            <asp:TextBox ID="NombreTextBox" runat="server" CssClass="form-control"></asp:TextBox>
+                            <div class="text-danger">
+                                <asp:RequiredFieldValidator runat="server" Display="Dynamic"
+                                    ErrorMessage="Debe ingresar el nombre"
+                                    ValidationGroup="Producto"
+                                    ControlToValidate="NombreTextBox">
+                                </asp:RequiredFieldValidator>
+                            </div>
+                        </div>
+            
+
+                        <div class="form-group">
+                            <label>Descripcion</label>
+                            <asp:TextBox ID="descripcionTextBox"  runat="server" CssClass="form-control"></asp:TextBox>
+                            <div class="text-danger">
+                                <asp:RequiredFieldValidator runat="server" Display="Dynamic"
+                                    ErrorMessage="Debe ingresar el la descripcion del Negocio"
+                                    ValidationGroup="Producto"
+                                    ControlToValidate="descripcionTextBox">
+                                </asp:RequiredFieldValidator>
+                            </div>
+                        </div>
+
+            
+                        <div class="form-group">
+                        <label>Empresa:</label>
+                        <asp:DropDownList ID="empresa_LineaNegocioTxt" CssClass="texto"  runat="server" 
+                        placeholder="Ingrese la Emprea " DataSourceID="ObjectDataSource1"
+                        DataTextField="nombre" DataValueField="empresaId" Height="46px" >
+                        </asp:DropDownList>
+                        <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" OldValuesParameterFormatString="original_{0}"
+                        SelectMethod="GetAllEmpresa" TypeName="EmpresaDSTableAdapters.EmpresaDaoTableAdapter" 
+                        OnSelecting="ObjectDataSource1_Selecting">
+                        </asp:ObjectDataSource>
+                        </div>
+
+
+                        <div class="form-group">
+                            <asp:LinkButton ID="SaveButton" runat="server" OnClick="SaveButton_Click"
+                                CssClass="btn btn-primary"
+                                ValidationGroup="Producto">
+                                Guardar
+                            </asp:LinkButton>
+                            <asp:HyperLink runat="server" NavigateUrl="ListaLineaNegocio.aspx" CssClass="btn">
+                                Cancelar
+                            </asp:HyperLink>
+                        </div>
+                    </div>
+                </div>
+                <asp:HiddenField ID="ProductoIdHiddenField" runat="server" Value="0" />
             </form>
         <asp:Label ID="msgError" runat="server" BorderColor="White"></asp:Label>
      </div>
