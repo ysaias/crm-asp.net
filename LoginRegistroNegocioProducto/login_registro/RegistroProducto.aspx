@@ -1,15 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="RegistroProducto.aspx.cs" Inherits="RegistroProducto" %>
 
 <!DOCTYPE html>
-<script runat="server">
-
-    protected void Page_Load(object sender, EventArgs e)
-    {
-
-    }
-</script>
-
-
 
 <html>
 <head>
@@ -53,20 +44,80 @@
     </nav>
     </div>
     <div class="registroProducto">
-            <h1 id="titulo">Registro Producto</h1>
+           
             <form id="registroProducto" runat="server" method="post">
           
-                <asp:TextBox ID="nombreTxt" cssClass="texto" name="user" runat="server"  placeholder="Ingrese Nombre del Producto"></asp:TextBox>
-               
-                <asp:TextBox ID="descripcionTxt" cssClass="texto" name="user" runat="server"  placeholder="Ingrese la descripcion"></asp:TextBox>
-                <label>Linea Negocio:</label>
-                <asp:DropDownList ID="LineaNegocio_ProductoTxt" CssClass="texto"  runat="server" placeholder="Ingrese la Linea De Negocio "  DataTextField="nombre" DataValueField="idLineaNegocio" Height="46px" Width="274px"></asp:DropDownList>
-                <asp:ObjectDataSource  runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetAllLineaNegocio" TypeName="LineaNegocioDSTableAdapters.GetAllLineaNegocioTableAdapter"></asp:ObjectDataSource>
-                <asp:Button ID="guardarBtn" CssClass="btn" type="submit" runat="server" Text="GUARDAR" OnClick="registrarProducto" />
-              
-            </form>
-            <asp:Label ID="msgError" runat="server" BorderColor="White"></asp:Label>
-     </div>
+                <div class="row">
+                  <div class="col-12">
+                        <h1>
+                            <asp:Literal runat="server" ID="LabelTitle"></asp:Literal>
+                            Producto
+                        </h1>            
+                        <asp:HyperLink runat="server" NavigateUrl="ListProductos.aspx">
+                            Volver a la Lista de Productos
+                        </asp:HyperLink>
+
+                        <asp:Panel ID="PanelError" runat="server" Visible="false" CssClass="alert alert-danger" role="alert">
+                            <asp:Literal ID="MsgLiteral" runat="server"></asp:Literal>
+                        </asp:Panel>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <asp:Label runat="server" AssociatedControlID="NombreTextBox">Nombre</asp:Label>
+                            <asp:TextBox ID="NombreTextBox" runat="server" CssClass="form-control"></asp:TextBox>
+                            <div class="text-danger">
+                                <asp:RequiredFieldValidator runat="server" Display="Dynamic"
+                                    ErrorMessage="Debe ingresar el nombre"
+                                    ValidationGroup="Producto"
+                                    ControlToValidate="NombreTextBox">
+                                </asp:RequiredFieldValidator>
+                            </div>
+                        </div>
+            
+
+                        <div class="form-group">
+                            <label>Descripcion</label>
+                            <asp:TextBox ID="descripcionTextBox"  runat="server" CssClass="form-control"></asp:TextBox>
+                            <div class="text-danger">
+                                <asp:RequiredFieldValidator runat="server" Display="Dynamic"
+                                    ErrorMessage="Debe ingresar el la descripcion del producto"
+                                    ValidationGroup="Producto"
+                                    ControlToValidate="descripcionTextBox">
+                                </asp:RequiredFieldValidator>
+                            </div>
+                        </div>
+
+            
+                        <div class="form-group">
+                            <label>Linea Negocio</label>
+                            <asp:TextBox ID="negocioTextBox" runat="server" CssClass="form-control"></asp:TextBox>
+                            <div class="text-danger">
+                                <asp:RequiredFieldValidator runat="server" Display="Dynamic"
+                                    ErrorMessage="Debe ingresar la cantidad de stock"
+                                    ValidationGroup="Producto"
+                                    ControlToValidate="negocioTextBox">
+                                </asp:RequiredFieldValidator>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <asp:LinkButton ID="SaveButton" runat="server" OnClick="SaveButton_Click"
+                                CssClass="btn btn-primary"
+                                ValidationGroup="Producto">
+                                Guardar
+                            </asp:LinkButton>
+                            <asp:HyperLink runat="server" NavigateUrl="ListProductos.aspx" CssClass="btn">
+                                Cancelar
+                            </asp:HyperLink>
+                        </div>
+                    </div>
+                </div>
+                <asp:HiddenField ID="ProductoIdHiddenField" runat="server" Value="0" />
+                        </form>
+                        <asp:Label ID="msgError" runat="server" BorderColor="White"></asp:Label>
+                 </div>
 
 
            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
