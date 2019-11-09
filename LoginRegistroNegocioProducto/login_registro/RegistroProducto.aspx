@@ -91,16 +91,14 @@
 
             
                         <div class="form-group">
-                            <label>Linea Negocio</label>
-                            <asp:TextBox ID="negocioTextBox" runat="server" CssClass="form-control"></asp:TextBox>
-                            <div class="text-danger">
-                                <asp:RequiredFieldValidator runat="server" Display="Dynamic"
-                                    ErrorMessage="Debe ingresar la cantidad de stock"
-                                    ValidationGroup="Producto"
-                                    ControlToValidate="negocioTextBox">
-                                </asp:RequiredFieldValidator>
-                            </div>
+                        <label>Linea Negocio:</label>
+                <asp:DropDownList ID="LineaNegocio_ProductoTxt" CssClass="texto"  runat="server" 
+                    placeholder="Ingrese la Linea De Negocio " DataSourceID="ObjectDataSource1"
+                    DataTextField="nombre" DataValueField="idLineaNegocio" Height="46px" ></asp:DropDownList>
+                <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" OldValuesParameterFormatString="original_{0}"
+                SelectMethod="GetAllLineaNegocio" TypeName="LineaNegocioDSTableAdapters.LineaNegocioDAOTableAdapter" OnSelecting="ObjectDataSource1_Selecting"></asp:ObjectDataSource>
                         </div>
+
 
                         <div class="form-group">
                             <asp:LinkButton ID="SaveButton" runat="server" OnClick="SaveButton_Click"

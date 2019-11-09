@@ -9,7 +9,7 @@
 
 .registroProducto {
     width: 300px;
-    height: 500px;
+    height: 600px;
     background: #000;
     color: #fff;
     padding: 40px 10px 10px 10px;
@@ -36,88 +36,103 @@
     width: 90%;
 }
 
+.texto {
+    background: #f8f9fa;
+    color: black;
+}
+
+#LineaNegocio_ProductoTxt{
+    width: 265px;
+}
+
+
+
 @media only screen and (min-width: 768px) {
     body {
-        width: 768px;
+            width: 768px;
+        }
+
+        .registroProducto {
+            width: 500px;
+           
+            background: #000;
+            color: #fff;
+            opacity: 0.7;
+            padding: 40px 20px 10px 20px;
+            border-radius: 2%;
+            overflow: hidden;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 5%;
+        }
+
+
+        #registroProducto {
+            width: 400px;
+            height: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            width: 100%;
+        }
+
+        #LineaNegocio_ProductoTxt {
+            width: 355px;
+        }
+  
         
+ }
+
+
+
+    @media screen and (min-width: 1024px) {
+        body {
+            width: 100%;
+        }
+
+        .registroProducto {
+            width: 500px;
+            
+            background: #000;
+            color: #fff;
+            opacity: 0.7;
+            padding: 40px 20px 10px 20px;
+            border-radius: 2%;
+            overflow: hidden;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 5%;
+        }
+
+        #registroProducto {
+            width: 400px;
+            height: 400px;
+        }
     }
 
-    .registroProducto {
-        width: 500px;
-        height: 500px;
-        background: #000;
-        color: #fff;
-        opacity: 0.7;
-        padding: 40px 20px 10px 20px;
-        border-radius: 2%;
-        overflow: hidden;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 5%;
+    @media screen and (min-width: 1200px) {
+        body {
+            width: 100%;
+        }
+
+        .container {
+            max-width: 1140px;
+        }
+
+        .registroProducto {
+            width: 500px;
+           
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #registroProducto {
+            width: 400px;
+            height: 500px;
+        }
     }
-
-
-     #registroProducto {
-        width: 400px;
-        height: 400px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .btn {
-        width: 100%;
-    }
-
-}
-
-
-
-@media screen and (min-width: 1024px) {
-    body {
-        width: 100%;
-    }
-
-    .registroProducto {
-        width: 500px;
-        height: 500px;
-        background: #000;
-        color: #fff;
-        opacity: 0.7;
-        padding: 40px 20px 10px 20px;
-        border-radius: 2%;
-        overflow: hidden;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 5%;
-    }
-
-    #registroProducto {
-        width: 400px;
-        height: 400px;
-    }
-}
-
-@media screen and (min-width: 1200px) {
-   body{
-       width: 100%;
-   }
-
-    .container {
-        max-width: 1140px;
-    }
-
-    .registroProducto {
-        width: 500px;
-        height: 500px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    #registroProducto {
-        width: 400px;
-        height: 500px;
-    }
-}
 
 
     

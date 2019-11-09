@@ -64,7 +64,7 @@ public partial class RegistroProducto : System.Web.UI.Page
             ProductoDAO obj = ProductoDto.GetProductoById(productoId);
             NombreTextBox.Text = obj.nombre;
             descripcionTextBox.Text = obj.descripcion;
-            negocioTextBox.Text = obj.LineaNegocio_Producto.ToString();
+            LineaNegocio_ProductoTxt.Text = obj.LineaNegocio_Producto.ToString();
            
 
         }
@@ -80,7 +80,7 @@ public partial class RegistroProducto : System.Web.UI.Page
         PanelError.Visible = false;
         try
         {
-            int negocio = Convert.ToInt32(negocioTextBox.Text);
+            int negocio = Convert.ToInt32(LineaNegocio_ProductoTxt.Text);
 
             int productoId = this.ProductoId;
             ProductoDAO obj = new ProductoDAO()
@@ -104,6 +104,11 @@ public partial class RegistroProducto : System.Web.UI.Page
         }
 
         Response.Redirect("ListProductos.aspx");
+
+    }
+
+    protected void ObjectDataSource1_Selecting(object sender, ObjectDataSourceSelectingEventArgs e)
+    {
 
     }
 }
