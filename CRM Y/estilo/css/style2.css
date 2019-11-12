@@ -1,0 +1,154 @@
+﻿* {
+    box-sizing: border-box;
+}
+    body{
+    margin: 2%;
+    padding: 0%;
+    background: url(../img/fondito.jpg) no-repeat center center fixed;
+    background-size: cover;
+    font-family: sans-serif;
+    text-align: center;
+    }
+
+.registroLogin {
+    width: 300px;
+    height: 748px;
+    background: #000;
+    color: #fff;
+    opacity: 0.7;
+    padding: 40px 20px 10px 20px;
+    margin-bottom: 0px;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+
+.avatar {
+    width: 47%;
+    height: 42%;
+    position: absolute;
+    top: -70px;
+    left: calc(50% - 20%);
+}
+
+h1 {
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 40px;
+    float: left;
+}
+
+label {
+    margin: 2px 0 0 0;
+    padding: 0 0 10px;
+    font-weight: bold;
+    display: block;
+    height: 25px;
+    float: left;
+}
+
+input {
+    width: 100%;
+    
+    margin-bottom: 20px;
+}
+
+#msgError {
+    float: left;
+}
+
+.texto {
+    background: transparent;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    color: #fff;
+    font-size: 14px;
+    float: left;
+    border-left-style: none;
+    border-left-color: inherit;
+    border-left-width: medium;
+    border-right-style: none;
+    border-right-color: inherit;
+    border-right-width: medium;
+    border-top-style: none;
+    border-top-color: inherit;
+    border-top-width: medium;
+}
+
+
+
+
+
+.btn {
+    border: none;
+    outline: none;
+    height: 30px;
+    background: rgb(87, 0, 0);
+    color: #fff;
+    border-radius: 2px;
+    font-size: 18px;
+    width: 100%;
+    float: left;
+    margin-top: 10px;
+}
+
+    .btn:hover {
+        background: brown;
+    }
+
+body {
+    background: url(../img/fondito.jpg) no-repeat center center fixed;
+}
+
+
+@media only screen and (min-width: 768px) {
+    body {
+        width: 768px;
+    }
+
+    .registroLogin {
+        width: 450px;
+        height: 780px;
+    }
+
+    .texto{
+        font-size: 16px;
+    }
+
+    h1{
+        margin: 0px 30%;
+    }
+
+    label {
+        float: left;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    body {
+        width: 100%;
+    }
+
+    .registroLogin {
+        width: 450px;
+        height: 780px;
+    }
+
+   
+}
+
+@media only screen and (min-width: 1440px) {
+    body {
+        width: 100%;
+    }
+
+    .registroLogin {
+        width: 500px;
+        height: 780px;
+    }
+
+   
+}
