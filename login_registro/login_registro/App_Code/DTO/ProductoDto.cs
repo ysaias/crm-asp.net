@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProductoDSTableAdapters;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -26,6 +27,8 @@ public class ProductoDto
 
         return producto;
     }
+
+   
 
     public static void InsertProducto(ProductoDAO theProducto)
     {

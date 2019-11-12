@@ -8,10 +8,11 @@ using System.Web;
 /// </summary>
 public class EmpresaDAO
 {
-    public int empresaId { get; set; }
+
+    public int idEmpresa { get; set; }
     public string nombre { get; set; }
-    public string Descripcion { get; set; }
-    public int UsuarioId { get; set; }
+    public string descripcion { get; set; }
+    public int Usuario_Empresa { get; set; }
 
     public EmpresaDAO()
     {

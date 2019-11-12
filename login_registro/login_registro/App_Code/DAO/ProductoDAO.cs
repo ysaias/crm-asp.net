@@ -14,7 +14,6 @@ public class ProductoDAO
     public string nombre { get; set; }
     public string descripcion { get; set; }
     public int LineaNegocio_Producto { get; set; }
-
     public ProductoDAO()
     {
         //

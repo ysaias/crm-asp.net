@@ -14,23 +14,25 @@ public class LineaNegocioDto
         // TODO: Agregar aquí la lógica del constructor
         //
     }
+
+
     private static LineaNegocioDAO CargarObjecto(LineaNegocioDS.LineaNegocioDAORow row)
     {
 
-        LineaNegocioDAO lineaNegocioDAO = new LineaNegocioDAO();
-        lineaNegocioDAO.idNegocio = row.idLineaNegocio;
-        lineaNegocioDAO.nombre = row.nombre;
-        lineaNegocioDAO.descripcion = row.descripcion;
-        lineaNegocioDAO.empresaId = row.empresaId;
+        LineaNegocioDAO lineanegocio = new LineaNegocioDAO();
+        lineanegocio.idLineaNegocio = row.idLineaNegocio;
+        lineanegocio.nombre = row.nombre;
+        lineanegocio.descripcion = row.descripcion;
+        lineanegocio.Empresa_LineaNegocio = row.Empresa_LineaNegocio;
 
-        return lineaNegocioDAO;
+        return lineanegocio;
     }
 
-    public static void InsertLineaNegocio(LineaNegocioDAO theLineanegocio)
+
+    public static void InsertLineaNegocio(LineaNegocioDAO theLinea)
     {
         LineaNegocioDSTableAdapters.LineaNegocioDAOTableAdapter adapter = new LineaNegocioDSTableAdapters.LineaNegocioDAOTableAdapter();
-        adapter.pr_InsertLineaNegocio(theLineanegocio.nombre, theLineanegocio.descripcion, theLineanegocio.empresaId);
+        adapter.pr_insertarLineaNegocio(theLinea.nombre, theLinea.descripcion, theLinea.Empresa_LineaNegocio);
     }
-
 
 }

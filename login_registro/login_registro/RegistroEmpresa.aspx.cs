@@ -6,13 +6,13 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class RegistroProducto : System.Web.UI.Page
+public partial class RegistroEmpresa : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
 
     }
-    protected void registrarProducto(object sender, EventArgs e) {
+    protected void registrarEmpresa(object sender, EventArgs e) {
         msgError.Text = "";
    
      
@@ -37,7 +37,7 @@ public partial class RegistroProducto : System.Web.UI.Page
             }
             if (LineaNegocio_ProductoTxt.Equals(""))
             {
-                msgError.Text = "Ingrese un Linea Negocio";
+                msgError.Text = "Ingrese una Emrpesa";
                 return;
 
             }
@@ -47,13 +47,13 @@ public partial class RegistroProducto : System.Web.UI.Page
             }
            
             
-            ProductoDAO producto = new ProductoDAO();
-            producto.nombre = nombre;
-            producto.descripcion = descripcion;
-            producto.LineaNegocio_Producto = Convert.ToInt32(LineaNegocio_ProductoTxt.SelectedValue);
+            EmpresaDAO empresa = new EmpresaDAO();
+            empresa.nombre = nombre;
+            empresa.descripcion = descripcion;
+            empresa.Usuario_Empresa = Convert.ToInt32(LineaNegocio_ProductoTxt.SelectedValue);
 
            
-            ProductoDto.InsertProducto(producto);
+            EmpresaDto.InsertEmpresa(empresa);
             Response.Redirect("index.aspx");
 
 
