@@ -12,4 +12,28 @@ public partial class RegistroOportunidad : System.Web.UI.Page
     {
 
     }
+
+    protected void ObjectDataSource1_Selecting(object sender, ObjectDataSourceSelectingEventArgs e)
+    {
+
+    }
+
+
+
+
+
+    protected void ListNegocio_SelectedIndexChanged1(object sender, EventArgs e)
+    {
+
+    }
+
+    protected void ListProducto_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
+    }
+
+    protected void ListUsuario_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
+    }
 }

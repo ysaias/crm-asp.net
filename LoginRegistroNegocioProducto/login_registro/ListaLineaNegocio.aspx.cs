@@ -46,7 +46,7 @@ public partial class ListaLineaNegocio : System.Web.UI.Page
             return;
         if (e.CommandName == "Editar")
         {
-            Response.Redirect("LineaNegocio.aspx?idLineaNegocio=" + negocioId);
+            Response.Redirect("RegistroLineaNegocio.aspx?idLineaNegocio=" + negocioId);
             return;
         }
         if (e.CommandName == "Eliminar")

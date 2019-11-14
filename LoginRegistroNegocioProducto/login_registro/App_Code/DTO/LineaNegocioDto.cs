@@ -34,7 +34,7 @@ public class LineaNegocioDto
             throw new ArgumentException("El idNegocio no puede ser menor o igual que cero");
 
         LineaNegocioDSTableAdapters.tblLineaNegocioDaoTableAdapter adapter = new LineaNegocioDSTableAdapters.tblLineaNegocioDaoTableAdapter();
-        LineaNegocioDS.tblLineaNegocioDaoDataTable table = adapter.GetLineaNegocioById(negocioId);
+        LineaNegocioDS.tblLineaNegocioDaoDataTable table = adapter.pr_GetLineaNegocioById(negocioId);
 
         if (table == null || table.Rows.Count != 1)
         {
@@ -95,7 +95,7 @@ public class LineaNegocioDto
     public static List<LineaNegocioDAO> GetLineaNegocios()
     {
         LineaNegocioDSTableAdapters.tblLineaNegocioDaoTableAdapter adapter = new LineaNegocioDSTableAdapters.tblLineaNegocioDaoTableAdapter();
-        LineaNegocioDS.tblLineaNegocioDaoDataTable table = adapter.GetAllLineaNegocio();
+        LineaNegocioDS.tblLineaNegocioDaoDataTable table = adapter.pr_SelectLineaNegocio();
 
         List<LineaNegocioDAO> list = new List<LineaNegocioDAO>();
         foreach (var row in table)
@@ -112,7 +112,7 @@ public class LineaNegocioDto
             throw new ArgumentException("El negocioId no puede ser menor o igual que cero");
 
         LineaNegocioDSTableAdapters.tblLineaNegocioDaoTableAdapter adapter = new LineaNegocioDSTableAdapters.tblLineaNegocioDaoTableAdapter();
-        adapter.deletedLineaNegocio(negocioId);
+        adapter.pr_deletedLineaNegocio(negocioId);
     }
 
     private static LineaNegocioDAO GetLineaNegocioFromRow(LineaNegocioDS.tblLineaNegocioDaoRow row)

@@ -22,7 +22,7 @@
     <div class="row">
         <div class="col-12">
             <h1>Lista Linea Negocios</h1>
-            <asp:HyperLink runat="server" NavigateUrl="~/LineaNegocio.aspx" CssClass="btn btn-primary">
+            <asp:HyperLink runat="server" NavigateUrl="~/RegistroLineaNegocio.aspx" CssClass="btn btn-primary">
                 Nuevo Negocio
             </asp:HyperLink>
             <br /><br />

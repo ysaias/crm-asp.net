@@ -33,7 +33,7 @@ public class ProductoDto
             throw new ArgumentException("El idProducto no puede ser menor o igual que cero");
 
         ProductoDSTableAdapters.tblProductoTableAdapter adapter = new ProductoDSTableAdapters.tblProductoTableAdapter();
-        ProductoDS.tblProductoDataTable table = adapter.prGetProductoById(productoId);
+        ProductoDS.tblProductoDataTable table = adapter.pr_GetProductoById(productoId);
 
         if (table == null || table.Rows.Count != 1)
         {
@@ -111,7 +111,7 @@ public class ProductoDto
             throw new ArgumentException("El productoId no puede ser menor o igual que cero");
 
         ProductoDSTableAdapters.tblProductoTableAdapter adapter = new ProductoDSTableAdapters.tblProductoTableAdapter();
-        adapter.deletedProducto(productoId);
+        adapter.pr_deletedProducto(productoId);
     }
 
     private static ProductoDAO GetProductoFromRow(ProductoDS.tblProductoRow row)

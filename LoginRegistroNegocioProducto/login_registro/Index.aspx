@@ -27,11 +27,13 @@
          <a class="nav-item nav-link" href="RegistroOportunidad.aspx">Oportunidad </a>
         <div class="nav-item dropdown">
              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Productos
+                 Registrar
              </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="LineaNegocio.aspx">Negocio</a>
+                  <a class="dropdown-item" href="RegistroLineaNegocio.aspx">Negocio</a>
                   <a class="dropdown-item" href="RegistroProducto.aspx">Producto</a>
+                  <a class="dropdown-item" href="RegistroEmpresa.aspx">Empresa</a>
+      
                 </div>
          </div>
          <a class="nav-item nav-link" href="Registro.aspx">Registo </a>

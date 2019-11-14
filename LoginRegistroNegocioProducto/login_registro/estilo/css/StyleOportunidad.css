@@ -61,9 +61,15 @@ label {
     float: left;
 }
 
-.texto{
+.texto {
     font-size: 14px;
+    
 }
+
+option {
+    background: #000;
+}
+
 
 input {
     width: 90%;

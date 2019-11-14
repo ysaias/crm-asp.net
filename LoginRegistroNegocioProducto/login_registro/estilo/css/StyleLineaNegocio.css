@@ -9,14 +9,14 @@
 
 .registroLineaNegocio {
     width: 300px;
-    height: 500px;
+    height: 600px;
     background: #000;
     color: #fff;
     padding: 40px 10px 10px 10px;
     opacity: 0.7;
     border-radius: 4px;
     overflow: hidden;
-    margin-top: 3%;
+    margin-top: 2%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -57,9 +57,8 @@ h1 {
         width: 768px;
     }
 
-    .registroProducto {
+    .registroLineaNegocio {
         width: 500px;
-       
         background: #000;
         color: #fff;
         opacity: 0.7;
@@ -68,13 +67,12 @@ h1 {
         overflow: hidden;
         margin-left: auto;
         margin-right: auto;
-        
     }
 
-    
 
 
-    #registroProducto {
+
+    #registroLineaNegocio {
         width: 400px;
         height: 350px;
         margin-left: auto;
@@ -83,6 +81,10 @@ h1 {
 
     .btn {
         width: 100%;
+    }
+
+    #empresa_LineaNegocioTxt {
+        width: 355px;
     }
 }
 
@@ -93,9 +95,8 @@ h1 {
         width: 100%;
     }
 
-    .registroProducto {
+    .registroLineaNegocio {
         width: 500px;
-        
         background: #000;
         color: #fff;
         opacity: 0.7;
@@ -104,10 +105,9 @@ h1 {
         overflow: hidden;
         margin-left: auto;
         margin-right: auto;
-       
     }
 
-    #registroProducto {
+    #registroLineaNegocio {
         width: 400px;
         height: 350px;
     }
@@ -122,14 +122,13 @@ h1 {
         max-width: 1140px;
     }
 
-    .registroProducto {
+    .registroLineaNegocio {
         width: 500px;
-       
         margin-left: auto;
         margin-right: auto;
     }
 
-    #registroProducto {
+    #registroLineaNegocio {
         width: 400px;
         height: 350px;
     }
