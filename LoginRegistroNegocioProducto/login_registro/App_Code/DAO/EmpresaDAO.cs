@@ -12,6 +12,8 @@ public class EmpresaDAO
     public string nombre { get; set; }
     public string Descripcion { get; set; }
     public int UsuarioId { get; set; }
+    public int telefono { get; set; }
+    public string email { get; set; }
 
     public EmpresaDAO()
     {

@@ -48,7 +48,6 @@ public partial class RegistroLineaNegocio : System.Web.UI.Page
         }
         if (NegocioId > 0)
         {
-            System.Diagnostics.Debug.WriteLine("Entro aqui " + NegocioId);
             LabelTitle.Text = "Editar";
             CargarDatos(NegocioId);
         }
@@ -64,8 +63,6 @@ public partial class RegistroLineaNegocio : System.Web.UI.Page
             NombreTextBox.Text = obj.nombre;
             descripcionTextBox.Text = obj.descripcion;
             empresa_LineaNegocioTxt.Text = obj.empresaId.ToString();
-
-
         }
         catch (Exception ex)
         {

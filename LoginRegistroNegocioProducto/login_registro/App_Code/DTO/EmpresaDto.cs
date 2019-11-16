@@ -23,6 +23,8 @@ public class EmpresaDto
         empresa.empresaId = row.empresaId;
         empresa.nombre = row.nombre;
         empresa.Descripcion = row.Descripcion;
+        empresa.telefono = row.telefono;
+        empresa.email = row.email;
         empresa.UsuarioId = row.UsuarioId;
 
         return empresa;
@@ -58,12 +60,18 @@ public class EmpresaDto
         if (string.IsNullOrEmpty(obj.Descripcion))
             throw new ArgumentException("La descripcion no puede ser nulo o vacio");
 
+        if (obj.telefono < 0)
+            throw new ArgumentException("EL campo no puede ser negativo");
+
+        if (string.IsNullOrEmpty(obj.email))
+            throw new ArgumentException("El email no puede ser nulo o vacio");
+
         if (obj.UsuarioId < 0)
             throw new ArgumentException("EL campo Usuario no puede ser negativo");
 
 
         EmpresaDSTableAdapters.EmpresaDaoTableAdapter adapter = new EmpresaDSTableAdapters.EmpresaDaoTableAdapter();
-        adapter.pr_insertarEmpresa(obj.nombre, obj.Descripcion, obj.UsuarioId);
+        adapter.pr_insertarEmpresa(obj.nombre, obj.Descripcion, obj.telefono, obj.email, obj.UsuarioId);
 
 
     }
@@ -82,11 +90,17 @@ public class EmpresaDto
         if (string.IsNullOrEmpty(obj.Descripcion))
             throw new ArgumentException("La descripcion no puede ser nulo o vacio");
 
+        if (obj.telefono < 0)
+            throw new ArgumentException("EL campo no puede ser negativo");
+
+        if (string.IsNullOrEmpty(obj.email))
+            throw new ArgumentException("El email no puede ser nulo o vacio");
+
         if (obj.UsuarioId < 0)
             throw new ArgumentException("El idUsuario no puede ser negativo");
 
         EmpresaDSTableAdapters.EmpresaDaoTableAdapter adapter = new EmpresaDSTableAdapters.EmpresaDaoTableAdapter();
-        adapter.pr_updateEmpresa(obj.empresaId, obj.nombre, obj.Descripcion, obj.UsuarioId);
+        adapter.pr_updateEmpresa(obj.empresaId, obj.nombre, obj.Descripcion, obj.telefono, obj.email, obj.UsuarioId);
     }
 
 
@@ -122,7 +136,9 @@ public class EmpresaDto
             empresaId   = row.empresaId,
             nombre = row.nombre,
             Descripcion = row.Descripcion,
-            UsuarioId = row.UsuarioId
+            telefono = row.telefono,
+            email = row.email,
+            UsuarioId = row.UsuarioId            
         };
     }
 

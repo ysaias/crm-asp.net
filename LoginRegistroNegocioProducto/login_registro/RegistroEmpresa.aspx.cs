@@ -7,8 +7,11 @@ using System.Web.UI.WebControls;
 
 public partial class RegistroEmpresa : System.Web.UI.Page
 {
+    
+
     public int EmpresaId
     {
+
         set { EmpresaIdHiddenField.Value = value.ToString(); }
         get
         {
@@ -24,6 +27,8 @@ public partial class RegistroEmpresa : System.Web.UI.Page
             return empresaId;
         }
     }
+
+
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -48,11 +53,11 @@ public partial class RegistroEmpresa : System.Web.UI.Page
         }
         if (EmpresaId > 0)
         {
-            System.Diagnostics.Debug.WriteLine("Entro aqui " + EmpresaId);
             LabelTitle.Text = "Editar";
             CargarDatos(EmpresaId);
         }
         else
+           
             LabelTitle.Text = "Nueva";
     }
 
@@ -63,7 +68,8 @@ public partial class RegistroEmpresa : System.Web.UI.Page
             EmpresaDAO obj = EmpresaDto.GetEmpresaById(empresaId);
             NombreTextBox.Text = obj.nombre;
             descripcionTextBox.Text = obj.Descripcion;
-
+            telefonoTextBox.Text = obj.telefono.ToString();
+            emailTextBox.Text = obj.email;
 
         }
         catch (Exception ex)
@@ -79,8 +85,8 @@ public partial class RegistroEmpresa : System.Web.UI.Page
         try
         {
 
-            EmpresaDAO objUsuario = EmpresaDto.GetEmpresaById(EmpresaId);
-            int usuarioID = objUsuario.UsuarioId;
+            
+            int usuarioID = Convert.ToInt32(usuariosTxt.Text);
 
             int empresaId = this.EmpresaId;
             EmpresaDAO obj = new EmpresaDAO()
@@ -88,6 +94,8 @@ public partial class RegistroEmpresa : System.Web.UI.Page
                 empresaId = empresaId,
                 nombre = NombreTextBox.Text,
                 Descripcion = descripcionTextBox.Text,
+                telefono = Convert.ToInt32(telefonoTextBox.Text),
+                email = emailTextBox.Text,
                 UsuarioId = usuarioID
             };
 
@@ -98,7 +106,7 @@ public partial class RegistroEmpresa : System.Web.UI.Page
         }
         catch (Exception ex)
         {
-            MsgLiteral.Text = "Error al guardar la mepresa";
+            MsgLiteral.Text = "Error al guardar la mepresa" + ex;
             PanelError.Visible = true;
             return;
         }

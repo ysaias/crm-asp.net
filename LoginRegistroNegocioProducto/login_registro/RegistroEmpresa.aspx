@@ -92,7 +92,43 @@
                             </div>
                         </div>
 
+                         <div class="form-group">
+                            <label>Telefono</label>
+                            <asp:TextBox ID="telefonoTextBox"  runat="server" CssClass="form-control"></asp:TextBox>
+                            <div class="text-danger">
+                                <asp:RequiredFieldValidator runat="server" Display="Dynamic"
+                                    ErrorMessage="Debe ingresar el número de telefon de la Empresa"
+                                    ValidationGroup="Producto"
+                                    ControlToValidate="telefonoTextBox">
+                                </asp:RequiredFieldValidator>
+                            </div>
+                        </div>
 
+                         <div class="form-group">
+                            <label>Email</label>
+                            <asp:TextBox ID="emailTextBox"  runat="server" CssClass="form-control"></asp:TextBox>
+                            <div class="text-danger">
+                                <asp:RequiredFieldValidator runat="server" Display="Dynamic"
+                                    ErrorMessage="Debe ingresar el email de la Empresa"
+                                    ValidationGroup="Producto"
+                                    ControlToValidate="emailTextBox">
+                                </asp:RequiredFieldValidator>
+                            </div>
+                        </div>
+
+                          <div class="form-group">
+                        <label>Usuarios:</label>
+                        <asp:DropDownList ID="usuariosTxt" CssClass="texto"  runat="server" 
+                        placeholder="Ingrese el Usuario " DataSourceID="ObjectDataSource1"
+                        DataTextField="Nombre" DataValueField="idUsuario" Height="46px" >
+                        </asp:DropDownList>
+                        <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" OldValuesParameterFormatString="original_{0}"
+                        SelectMethod="pr_SelectUsuario" TypeName="UsuarioDSTableAdapters.pr_verificacionUsuariosTableAdapter" 
+                        OnSelecting="ObjectDataSource1_Selecting">
+                        </asp:ObjectDataSource>
+                        </div>
+
+                                                                     
                         <div class="form-group">
                             <asp:LinkButton ID="SaveButton" runat="server" OnClick="SaveButton_Click"
                                 CssClass="btn btn-primary"

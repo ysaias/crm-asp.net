@@ -55,6 +55,8 @@
                     </asp:TemplateField>
                     <asp:BoundField HeaderText="Nombre" DataField="nombre" />
                     <asp:BoundField HeaderText="Descripcion" DataField="Descripcion" />
+                    <asp:BoundField HeaderText="Telefono" DataField="telefono" />
+                    <asp:BoundField HeaderText="Email" DataField="email" />
                     <asp:BoundField HeaderText="Usuario" DataField="UsuarioId" />
                 </Columns>
             </asp:GridView>
