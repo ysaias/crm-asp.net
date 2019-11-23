@@ -34,6 +34,12 @@ public partial class RegistroEmpresa : System.Web.UI.Page
     {
         if (!IsPostBack)
         {
+
+            if (Session["UserId"] != null)
+            {
+                int usreid = Convert.ToInt32(Session["UserId"].ToString());
+                usuariosTxt.SelectedValue = usreid.ToString();
+            }
             ProcesarParametros();
         }
     }

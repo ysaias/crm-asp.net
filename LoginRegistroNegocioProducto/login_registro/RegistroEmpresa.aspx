@@ -13,37 +13,7 @@
 
         
 </head><body>
-    <div class="container">
-    <nav class="navbar sticky-top navbar-expand-md navbar-dark bg-dark">
-        <a class="navbar-brand" href="Index.aspx">
-        <img src="/estilo/img/LogoCrm.svg" width="30" height="30" class="d-inline-block align-top" alt="Logo CRM ALL">
-        CRM ALL
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-        </button>
-          <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-
-        <div class="navbar-nav mr-auto ml-auto text-center">
-         <a class="nav-item nav-link active" href="index.aspx">Inicio </a>
-         <a class="nav-item nav-link" href="RegistroOportunidad.aspx">Oportunidad </a>
-         <div class="nav-item dropdown">
-             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Registrar
-             </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="RegistroLineaNegocio.aspx">Negocio</a>
-                  <a class="dropdown-item" href="RegistroProducto.aspx">Producto</a>
-                  <a class="dropdown-item" href="RegistroEmpresa.aspx">Empresa</a>
-      
-                </div>
-         </div>
-         <a class="nav-item nav-link" href="Registro.aspx">Registo </a>
-         <a class="nav-item nav-link" href="Login.aspx">Login </a> 
-        </div>
-          </div>
-    </nav>
-    </div>
+    
     <div class="registroLineaNegocio">
             <form id="registroLineaNegocio" runat="server" method="post">
            
@@ -119,7 +89,7 @@
                           <div class="form-group">
                         <label>Usuarios:</label>
                         <asp:DropDownList ID="usuariosTxt" CssClass="texto"  runat="server" 
-                        placeholder="Ingrese el Usuario " DataSourceID="ObjectDataSource1"
+                        placeholder="Ingrese el Usuario " DataSourceID="ObjectDataSource1" Enabled="false"
                         DataTextField="Nombre" DataValueField="idUsuario" Height="46px" >
                         </asp:DropDownList>
                         <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" OldValuesParameterFormatString="original_{0}"

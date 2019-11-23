@@ -29,6 +29,12 @@ public partial class RegistroLineaNegocio : System.Web.UI.Page
     {
         if (!IsPostBack)
         {
+            if (Session["UserId"] != null)
+            {
+                int usreid = Convert.ToInt32(Session["UserId"].ToString());
+                useridHiddenField1.Value = usreid.ToString();
+                empresa_LineaNegocioTxt.DataBind();
+            }
             ProcesarParametros();
         }
     }
