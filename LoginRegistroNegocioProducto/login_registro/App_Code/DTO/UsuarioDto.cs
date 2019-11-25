@@ -93,7 +93,7 @@ public class UsuarioDto
 
             MailMessage mail = new MailMessage();
             SmtpClient smtpCli = new SmtpClient();
-            mail.From = new MailAddress("angelsistemas@itn.lyv.mybluehost.me");
+            mail.From = new MailAddress("ysaiasceron@crm21.net");
             mail.To.Add(new MailAddress(user.correo));
 
             string message =
@@ -104,10 +104,11 @@ public class UsuarioDto
             mail.Body = message;
             mail.IsBodyHtml = true;
             mail.Subject = "Activacion de Cuenta";
-            smtpCli.Host = "mail.itn.lyv.mybluehost.me";
+            smtpCli.Host = "mail.crm21.net";
             smtpCli.Port = 587;
-            smtpCli.Credentials = new NetworkCredential("angelsistemas@itn.lyv.mybluehost.me", "ysNwm0axilRj");
-            smtpCli.EnableSsl = true;
+            smtpCli.Credentials = new NetworkCredential("ysaiasceron@crm21.net", "Ysa4@belgioeri");
+            smtpCli.EnableSsl= false;
+
             smtpCli.Send(mail);
         }
         catch (Exception e)

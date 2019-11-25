@@ -29,6 +29,7 @@ public partial class RegistroLineaNegocio : System.Web.UI.Page
     {
         if (!IsPostBack)
         {
+           
             ProcesarParametros();
         }
     }
@@ -59,7 +60,7 @@ public partial class RegistroLineaNegocio : System.Web.UI.Page
     {
         try
         {
-            LineaNegocioDAO obj = LineaNegocioDto.GetProductoById(productoId);
+            LineaNegocioDAO obj = LineaNegocioDto.GetLineaNegocioById(productoId);
             NombreTextBox.Text = obj.nombre;
             descripcionTextBox.Text = obj.descripcion;
             empresa_LineaNegocioTxt.Text = obj.empresaId.ToString();

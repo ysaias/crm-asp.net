@@ -1,0 +1,213 @@
+﻿body {
+    margin: 2%;
+    padding: 0%;
+    background: url(../img/fondito.jpg) no-repeat center center fixed;
+    background-size: cover;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.registroOportunidad {
+    width: 300px;
+    height: 700px;
+    background: #000;
+    color: #fff;
+    padding: 20px 10px 10px 10px;
+    opacity: 0.7;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 05%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.registroOportunidad2 {
+    width: 300px;
+    height: 700px;
+    background: #000;
+    color: #fff;
+    padding: 20px 10px 10px 10px;
+    opacity: 0.7;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 05%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#formOportunidad {
+    width: 300px;
+    height: 520px;
+}
+
+#formOportunidad2 {
+    width: 300px;
+    height: 680px;
+}
+
+h1 {
+    margin: 0 25%;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 25px;
+}
+
+label {
+    margin: 2px 0 0 0;
+    padding: 0 0 5px;
+    font-weight: bold;
+    display: block;
+    height: 20px;
+    float: left;
+}
+
+.texto {
+    font-size: 14px;
+}
+
+option {
+    background: #000;
+}
+
+
+input {
+    width: 90%;
+    margin-bottom: 20px;
+}
+
+.btn {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    float: none;
+}
+
+.listas {
+    height: 30px;
+    margin-bottom: 20px;
+    Width: 280px;
+    margin-right: 30px;
+    margin-left: auto;
+}
+
+.fecha {
+    float: left;
+    width: 120px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.clock {
+    max-width: 160px;
+    margin-top: 2em;
+    padding: 1em;
+}
+
+.clock input, .clock span {
+        border-color: #999;
+}
+
+#msgError{
+    color: red;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+    width: 270px;
+}
+
+
+@media screen and (min-width: 768px) {
+    body {
+        width: 768px;
+    }
+
+    .registroOportunidad {
+        padding: 10px 10px 10px 10px;
+    }
+
+    .registroOportunidad2 {
+        padding: 10px 10px 10px 10px;
+    }
+
+
+    #formOportunidad {
+        width: 300px;
+        height: 550px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #formOportunidad2 {
+        width: 300px;
+    }
+
+
+
+    .btn {
+        width: 40%;
+    }
+}
+
+
+
+
+@media screen and (min-width: 1024px) {
+    body {
+        width: 100%;
+    }
+
+    .registroOportunidad {
+        width: 400px;
+    }
+
+    .registroOportunidad2 {
+        width: 400px;
+        height: 600px;
+    }
+
+    h1 {
+        margin: 0px 30%;
+    }
+
+
+    #formOportunidad {
+        width: 400px;
+    }
+
+    #formOportunidad2 {
+        width: 400px;
+    }
+
+    .listas {
+        height: 40px;
+        width: 340px;
+    }
+
+    #productoTxt {
+        height: 40px;
+    }
+
+    .form-group {
+        width: 350px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    body {
+        width: 100%;
+    }
+
+    .container {
+        max-width: 1140px;
+    }
+
+
+    #formOportunidad {
+        width: 400px;
+    }
+
+    #formOportunidad2 {
+        width: 400px;
+    }
+}

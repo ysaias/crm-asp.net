@@ -9,7 +9,7 @@
 
 .registroOportunidad {
     width: 300px;
-    height: 420px;
+    height: 560px;
     background: #000;
     color: #fff;
     padding: 20px 10px 10px 10px;
@@ -35,6 +35,20 @@
     margin-right: auto;
 }
 
+.registroOportunidadd {
+    width: 300px;
+    height: 800px;
+    background: #000;
+    color: #fff;
+    padding: 20px 10px 10px 10px;
+    opacity: 0.7;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 05%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 #formOportunidad {
     width: 300px;
     height: 520px;
@@ -43,6 +57,11 @@
 #formOportunidad2 {
     width: 300px;
     height: 680px;
+}
+
+#formOportunidadd {
+    width: 300px;
+    height: 800px;
 }
 
 h1 {
@@ -93,10 +112,21 @@ input {
 
 .fecha {
     float: left;
-    width: 100px;
+    width: 120px;
     margin-right: 10px;
     margin-left: 10px;
 }
+
+.clock {
+    max-width: 160px;
+    margin-top: 2em;
+    padding: 1em;
+}
+
+    .clock input,
+    .clock span {
+        border-color: #999;
+    }
 
 
 
@@ -127,11 +157,13 @@ input {
     }
 
    
+   
 
     .btn {
         width: 40%;
     }
 }
+
 
 
 
@@ -142,7 +174,6 @@ input {
 
     .registroOportunidad {
         width: 400px;
-        height: 420px;
     }
 
     .registroOportunidad2{

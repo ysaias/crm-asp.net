@@ -10,7 +10,9 @@
     <link rel="icon" href="../Assets/Imagenes/favicon.png" type="image/png"/>
      <style>
         body {
+
             background: url(estilo/img/fondito.jpg)
+            
         }
     </style>
 </head>

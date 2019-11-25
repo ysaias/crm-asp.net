@@ -22,11 +22,21 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
-          <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+              <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
 
         <div class="navbar-nav mr-auto ml-auto text-center">
          <a class="nav-item nav-link active" href="index.aspx">Inicio </a>
          <a class="nav-item nav-link" href="RegistroOportunidad.aspx">Oportunidad </a>
+           <div class="nav-item dropdown">
+             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLinkOportunidad" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Oportunidad 
+             </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="RegistroCliente.aspx">Cliente</a>
+                  <a class="dropdown-item" href="RegistroPais.aspx">Pais</a>      
+                  <a class="dropdown-item" href="RegistroCiudad.aspx">Ciudad</a>
+                </div>
+         </div>
          <div class="nav-item dropdown">
              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Registrar
@@ -99,10 +109,10 @@
                         placeholder="Ingrese la Emprea " DataSourceID="ObjectDataSource1"
                         DataTextField="nombre" DataValueField="empresaId" Height="46px" >
                         </asp:DropDownList>
-                        <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" OldValuesParameterFormatString="original_{0}"
-                        SelectMethod="pr_SelectEmpresa" TypeName="EmpresaDSTableAdapters.EmpresaDaoTableAdapter" 
-                        OnSelecting="ObjectDataSource1_Selecting">
-                        </asp:ObjectDataSource>
+                            <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" 
+                                OldValuesParameterFormatString="original_{0}" SelectMethod="pr_SelectEmpresa" 
+                                TypeName="EmpresaDSTableAdapters.EmpresaDaoTableAdapter">
+                            </asp:ObjectDataSource>
                         </div>
 
 
@@ -121,7 +131,7 @@
                 <asp:HiddenField ID="NegocioIdHiddenField" runat="server" Value="0" />
             </form>
         <asp:Label ID="msgError" runat="server" BorderColor="White"></asp:Label>
-     </div>
+      </div>
 
 
            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>

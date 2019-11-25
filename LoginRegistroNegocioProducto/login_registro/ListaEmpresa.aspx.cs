@@ -7,10 +7,16 @@ using System.Web.UI.WebControls;
 
 public partial class ListaEmpresa : System.Web.UI.Page
 {
+    int userId = 0;
+
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
         {
+            if (Session["UserId"] != null)
+            {
+                userId = Convert.ToInt32(Session["UserId"].ToString());
+            }
             CargarListaEmpresas();
         }
     }
@@ -19,7 +25,7 @@ public partial class ListaEmpresa : System.Web.UI.Page
     {
         try
         {
-            List<EmpresaDAO> empresas = EmpresaDto.GetEmpresas();
+            List<EmpresaDAO> empresas = EmpresaDto.GetEmpresasByIdUsuario(userId);
             EmpresasGridView.DataSource = empresas;
             EmpresasGridView.DataBind();
         }

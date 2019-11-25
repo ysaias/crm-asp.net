@@ -103,4 +103,4 @@ END
 GO
 
 
-select * from tb
+select * from tblUsuario;

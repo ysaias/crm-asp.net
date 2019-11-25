@@ -120,6 +120,20 @@ public class EmpresaDto
         return list;
     }
 
+    public static List<EmpresaDAO> GetEmpresasByIdUsuario(int idUsuario)
+    {
+        EmpresaDSTableAdapters.EmpresaDaoTableAdapter adapter = new EmpresaDSTableAdapters.EmpresaDaoTableAdapter();
+        EmpresaDS.EmpresaDaoDataTable table = adapter.Pr_SelectEmpresaByIdUsuario(idUsuario);
+
+        List<EmpresaDAO> list = new List<EmpresaDAO>();
+        foreach (var row in table)
+        {
+            EmpresaDAO obj = GetEmpresaFromRow(row);
+            list.Add(obj);
+        }
+        return list;
+    }
+
     public static void DeleteEmpresa(int empresaId)
     {
         if (empresaId <= 0)

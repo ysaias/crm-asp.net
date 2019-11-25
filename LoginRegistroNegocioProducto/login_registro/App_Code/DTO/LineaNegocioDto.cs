@@ -28,7 +28,7 @@ public class LineaNegocioDto
         return negocio;
     }
 
-    public static LineaNegocioDAO GetProductoById(int negocioId)
+    public static LineaNegocioDAO GetLineaNegocioById(int negocioId)
     {
         if (negocioId <= 0)
             throw new ArgumentException("El idNegocio no puede ser menor o igual que cero");
@@ -43,7 +43,6 @@ public class LineaNegocioDto
         LineaNegocioDAO obj = GetLineaNegocioFromRow(table[0]);
         return obj;
     }
-
 
 
 
@@ -96,6 +95,20 @@ public class LineaNegocioDto
     {
         LineaNegocioDSTableAdapters.tblLineaNegocioDaoTableAdapter adapter = new LineaNegocioDSTableAdapters.tblLineaNegocioDaoTableAdapter();
         LineaNegocioDS.tblLineaNegocioDaoDataTable table = adapter.pr_SelectLineaNegocio();
+
+        List<LineaNegocioDAO> list = new List<LineaNegocioDAO>();
+        foreach (var row in table)
+        {
+            LineaNegocioDAO obj = GetLineaNegocioFromRow(row);
+            list.Add(obj);
+        }
+        return list;
+    }
+
+    public static List<LineaNegocioDAO> GetLineaNegociosByIdEmpresa(int empreaId)
+    {
+        LineaNegocioDSTableAdapters.tblLineaNegocioDaoTableAdapter adapter = new LineaNegocioDSTableAdapters.tblLineaNegocioDaoTableAdapter();
+        LineaNegocioDS.tblLineaNegocioDaoDataTable table = adapter.Pr_SelectLineaNegocioByIdEmpresa(empreaId);
 
         List<LineaNegocioDAO> list = new List<LineaNegocioDAO>();
         foreach (var row in table)
