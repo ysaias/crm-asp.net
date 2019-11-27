@@ -10,7 +10,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Ela Admin - HTML5 Admin Template</title>
+    <title>CRM ALL</title>
     <meta name="description" content="Ela Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -90,24 +90,30 @@
                     <li class="menu-title">Elementos</li>
                     <!-- /.menu-title -->
                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="menu-icon fa fa-cogs"></i>EMPRESA</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="menu-icon fa fa-cogs"></i>REGISTROS</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="fa fa-id-badge"></i><a href="RegistroEmpresa.aspx">Registro Empresa</a></li>
-                            <li><i class="fa fa-bars"></i><a href="ListaEmpresa.aspx">Lista de Empresa</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="menu-icon fa fa-table"></i>LINEA NEGOCIO</a>
-                        <ul class="sub-menu children dropdown-menu">
                             <li><i class="fa fa-table"></i><a href="RegistroLineaNegocio.aspx">Registro Linea</a></li>
-                            <li><i class="fa fa-table"></i><a href="ListaLineaNegocio.aspx">Lista de Linea </a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="RegistroProducto.aspx">Registro Producto</a></li>
+                            
                         </ul>
                     </li>
                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="menu-icon fa fa-th"></i>PRODUCTO</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="menu-icon fa fa-table"></i>LISTAS</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-th"></i><a href="RegistroProducto.aspx">Registro Producto</a></li>
+                            <li><i class="fa fa-bars"></i><a href="ListaEmpresa.aspx">Lista de Empresa</a></li>
+                            <li><i class="fa fa-table"></i><a href="ListaLineaNegocio.aspx">Lista de Linea </a></li>
                             <li><i class="menu-icon fa fa-th"></i><a href="ListProductos.aspx">Lista Producto</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="menu-icon fa fa-th"></i>OPORTUNIDAD</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon fa fa-th"></i><a href="RegistroCliente.aspx">Registro Cliente</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="RegistroPais.aspx">Registro Pais</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="RegistroCiudad.aspx">Registro</a></li>
+
                         </ul>
                     </li>
 

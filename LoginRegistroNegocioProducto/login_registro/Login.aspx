@@ -23,7 +23,7 @@
 
         <div class="navbar-nav mr-auto ml-auto text-center">
          <a class="nav-item nav-link active" href="index.aspx">Inicio </a>
-         <a class="nav-item nav-link" href="RegistroOportunidad.aspx">Oportunidad </a>
+         <a class="nav-item nav-link" href="RegistroOportunidadd.aspx">Oportunidad </a>
          <div class="nav-item dropdown">
              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                  Registrar

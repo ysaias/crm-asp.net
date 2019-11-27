@@ -31,4 +31,26 @@ public partial class TestMail : System.Web.UI.Page
 
         SmtpServer.Send(mail);
     }
+
+    protected void btn_ClickDate(object sender, EventArgs e)
+    {
+        DateTime dt = new DateTime();
+
+Console.WriteLine(dt.ToString("MM'/'dd yyyy"));
+Console.WriteLine(dt.ToString("dd.MM.yyyy"));
+Console.WriteLine(dt.ToString("MM.dd.yyyy HH:mm"));
+Console.WriteLine(dt.ToString("dddd, MMMM (yyyy): HH:mm:ss"));
+Console.WriteLine(dt.ToString("dddd @ hh:mm tt", System.Globalization.CultureInfo.InvariantCulture));
+
+        Label1.Text = dt.ToLocalTime().ToString(System.Globalization.CultureInfo.InvariantCulture);
+
+}
+
+
+
+
+    protected void Calendar1_SelectionChanged(object sender, EventArgs e)
+    {
+
+    }
 }

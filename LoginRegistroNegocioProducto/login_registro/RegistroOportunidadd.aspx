@@ -26,7 +26,7 @@
 
         <div class="navbar-nav mr-auto ml-auto text-center">
          <a class="nav-item nav-link active" href="index.aspx">Inicio </a>
-         <a class="nav-item nav-link" href="RegistroOportunidad.aspx">Oportunidad </a>
+         <a class="nav-item nav-link" href="RegistroOportunidadd.aspx">Oportunidad </a>
            <div class="nav-item dropdown">
              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLinkOportunidad" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Oportunidad 
@@ -61,10 +61,10 @@
                   <div class="col-12">
                         <h2>
                             <asp:Literal runat="server" ID="LabelTitle"></asp:Literal>
-                            Cliente
+                            Oportunidad
                         </h2>            
-                        <asp:HyperLink runat="server" NavigateUrl="~/ListCliente.aspx">
-                            Volver a la Lista de CLiente
+                        <asp:HyperLink runat="server" NavigateUrl="~/ListaOportunidad.aspx">
+                            Volver a la Lista de Oportunidad
                         </asp:HyperLink>
 
                         <asp:Panel ID="PanelError" runat="server" Visible="false" CssClass="alert alert-danger" role="alert">
@@ -100,6 +100,9 @@
                         <asp:TextBox ID="descripcionTxt" CssClass="texto" name="user" runat="server" placeholder="Describa el Prospecto"></asp:TextBox>
                         <label>Fecha Hora:</label>
                         <asp:TextBox ID="fechaHoraTxt" CssClass="texto" name="user" runat="server" placeholder="Fecha y Hora"></asp:TextBox>
+                        
+                        
+                            
                         
                          <label>Origen :</label>
                         <asp:DropDownList ID="origenList" CssClass="texto listas" runat="server"
@@ -150,9 +153,6 @@
      </div>
 
 
-           <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-           <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-           <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
+          
 </body>
 </html>
