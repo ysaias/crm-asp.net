@@ -12,11 +12,7 @@ public partial class ListaEmpresa : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
-        {
-            if (Session["UserId"] != null)
-            {
-                userId = Convert.ToInt32(Session["UserId"].ToString());
-            }
+        {          
             CargarListaEmpresas();
         }
     }
@@ -25,7 +21,12 @@ public partial class ListaEmpresa : System.Web.UI.Page
     {
         try
         {
+            userId = Convert.ToInt32(Session["UserId"]);
             List<EmpresaDAO> empresas = EmpresaDto.GetEmpresasByIdUsuario(userId);
+            if (empresas.Count <= 0)
+            {
+                Response.Redirect("RegistroEmpresa.aspx");
+            }
             EmpresasGridView.DataSource = empresas;
             EmpresasGridView.DataBind();
         }
@@ -53,7 +54,13 @@ public partial class ListaEmpresa : System.Web.UI.Page
             Response.Redirect("RegistroEmpresa.aspx?empresaId=" + empresaId);
             return;
         }
-        if (e.CommandName == "Eliminar")
+        else if (e.CommandName == "VerLinea")
+        {
+            Session["EmpresaLinea"] = empresaId.ToString();
+            Response.Redirect("ListaLineaNegocio.aspx");
+            return;
+        }
+        else if (e.CommandName == "Eliminar")
         {
             try
             {

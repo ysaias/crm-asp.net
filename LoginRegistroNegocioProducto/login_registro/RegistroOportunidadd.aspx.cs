@@ -71,8 +71,7 @@ public partial class RegistroCliente : System.Web.UI.Page
             OportunidadDAO obj = OportunidadDto.GetOportunidadById(oportunidadId);
             ListNegocio.Text = obj.idLineadeNegocio.ToString();
             ListProducto.Text = obj.idProducto.ToString();
-            descripcionTxt.Text = obj.Descripcion;
-            fechaHoraTxt.Text = obj.fechaHora.ToString();
+            descripcionTxt.Text = obj.Descripcion;            
             origenList.Text = obj.idOrigen.ToString();
             clienteList.Text = obj.idCliente.ToString();
             ListEjecutivo.Text = obj.idUsuario.ToString();
@@ -97,12 +96,12 @@ public partial class RegistroCliente : System.Web.UI.Page
             string LineaNegocio = (ListNegocio.Text).Trim();
             string Producto = (ListProducto.Text).Trim();
             string descripcion = (descripcionTxt.Text).Trim();
-            string fechaHora = (fechaHoraTxt.Text).Trim();
+            
             string Origen = (origenList.Text).Trim();
             string Cliente = (ListEjecutivo.Text).Trim();
             string Usuario = (clienteList.Text).Trim();
             if (LineaNegocio.Equals("") || Producto.Equals("")
-                || descripcion.Equals("") || fechaHora.Equals("")
+                || descripcion.Equals("") 
                 || Origen.Equals("") || Cliente.Equals("") || Usuario.Equals(""))
             {
                 msgError.Text = "Ingrese todos los campos";
@@ -128,12 +127,7 @@ public partial class RegistroCliente : System.Web.UI.Page
                 return;
 
             }
-            if (fechaHora.Equals(""))
-            {
-                msgError.Text = "Ingrese la fecha";
-                return;
 
-            }
 
             if (Origen.Equals(""))
             {
@@ -161,7 +155,7 @@ public partial class RegistroCliente : System.Web.UI.Page
                 idLineadeNegocio = Convert.ToInt32(LineaNegocio),
                 idOportunidad = Convert.ToInt32(Producto),
                 Descripcion = descripcion,
-                fechaHora = Convert.ToDateTime(fechaHora),
+                fechaHora = DateTime.Now,
                 idOrigen = Convert.ToInt32(Origen),
                 idCliente = Convert.ToInt32(Cliente),
                 idUsuario = Convert.ToInt32(Usuario)

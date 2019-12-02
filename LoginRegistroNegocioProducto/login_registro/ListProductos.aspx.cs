@@ -11,9 +11,36 @@ public partial class ListProductos : System.Web.UI.Page
     {
         if (!IsPostBack)
         {
-            CargarProductos();
+            if (Session["NegocioProducto"] != null && Session["EmpresaLinea"] != null)
+            {
+                int empresaId = Convert.ToInt32(Session["EmpresaLinea"].ToString());
+                if (empresaId <= 0)
+                    Response.Redirect("ListaEmpresa.aspx");
 
 
+                EmpresaDAO objEmp = EmpresaDto.GetEmpresaById(empresaId);
+                if (objEmp == null)
+                    Response.Redirect("ListaEmpresa.aspx");
+
+                EmpresaIdHD.Value = empresaId.ToString();
+
+                int negocioId = Convert.ToInt32(Session["NegocioProducto"].ToString());
+                if (negocioId <= 0)
+                    Response.Redirect("ListaEmpresa.aspx");
+
+                LineaNegocioDAO objNeg = LineaNegocioDto.GetLineaNegocioById(negocioId);
+                if (objNeg == null)
+                    Response.Redirect("ListaEmpresa.aspx");
+
+                NegocioIdHD.Value = negocioId.ToString();
+
+                NegocioEmpresa.InnerText = objNeg.nombre.ToUpper() + " - " + objEmp.nombre;                
+                CargarProductos();
+            }
+            else
+            {
+                Response.Redirect("ListaEmpresa.aspx");
+            }
         }
     }
 
@@ -21,7 +48,7 @@ public partial class ListProductos : System.Web.UI.Page
     {
         try
         {
-            List<ProductoDAO> productos = ProductoDto.GetProductos();
+            List<ProductoDAO> productos = ProductoDto.GetProductosByLineaNegocio(Convert.ToInt32(NegocioIdHD.Value));
             ProductosGridView.DataSource = productos;
             ProductosGridView.DataBind();
         }
@@ -61,5 +88,12 @@ public partial class ListProductos : System.Web.UI.Page
 
             }
         }
+    }
+
+    protected void btnRegistrarProducto_Click(object sender, EventArgs e)
+    {
+        Session["EmpresaLinea"] = EmpresaIdHD.Value;
+        Session["NegocioProducto"] = NegocioIdHD.Value;
+        Response.Redirect("RegistroProducto.aspx");
     }
 }

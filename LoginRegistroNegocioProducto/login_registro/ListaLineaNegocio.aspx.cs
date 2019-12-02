@@ -11,9 +11,22 @@ public partial class ListaLineaNegocio : System.Web.UI.Page
     {
         if (!IsPostBack)
         {
-            CargarLineaNegocios();
+            if (Session["EmpresaLinea"] != null)
+            {
+                int empresaId = Convert.ToInt32(Session["EmpresaLinea"].ToString());
+                if (empresaId <= 0)
+                {
+                    Response.Redirect("ListaEmpresa.aspx");
+                }
+                EmpresaNombre.InnerText= EmpresaDto.GetEmpresaById(empresaId).nombre;
+                EmpresaIdHD.Value = empresaId.ToString();
+                CargarLineaNegocios();
 
-
+            }
+            else
+            {
+                Response.Redirect("ListaEmpresa.aspx");
+            }
         }
     }
 
@@ -21,7 +34,8 @@ public partial class ListaLineaNegocio : System.Web.UI.Page
     {
         try
         {
-            List<LineaNegocioDAO> negocios = LineaNegocioDto.GetLineaNegocios();
+
+            List<LineaNegocioDAO> negocios = LineaNegocioDto.GetLineaNegociosByIdEmpresa(Convert.ToInt32(EmpresaIdHD.Value));
             NegociosGridView.DataSource = negocios;
             NegociosGridView.DataBind();
         }
@@ -49,7 +63,14 @@ public partial class ListaLineaNegocio : System.Web.UI.Page
             Response.Redirect("RegistroLineaNegocio.aspx?idLineaNegocio=" + negocioId);
             return;
         }
-        if (e.CommandName == "Eliminar")
+        else if (e.CommandName == "VerProducto")
+        {
+            Session["EmpresaLinea"] = EmpresaIdHD.Value;
+            Session["NegocioProducto"] = negocioId.ToString();
+            Response.Redirect("ListProductos.aspx");
+            return;
+        }
+        else if (e.CommandName == "Eliminar")
         {
             try
             {
@@ -61,5 +82,13 @@ public partial class ListaLineaNegocio : System.Web.UI.Page
 
             }
         }
+    }
+
+
+
+    protected void btnRegistrarNuevo_Click(object sender, EventArgs e)
+    {
+        Session["EmpresaLinea"] = EmpresaIdHD.Value;
+        Response.Redirect("RegistroLineaNegocio.aspx");
     }
 }

@@ -9,10 +9,16 @@ public partial class Index : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if(Session["UserId"] == null)
+        if (!IsPostBack)
         {
-            Response.Redirect("Login.aspx");
-        }   
+            if (Session["UserId"] == null)
+            {
+                Response.Redirect("Login.aspx");
+            }
+
+            Response.Redirect("ListaEmpresa.aspx");
+        }
+        
            
     }
 

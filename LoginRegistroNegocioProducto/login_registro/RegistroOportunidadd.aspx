@@ -98,13 +98,13 @@
                             OnSelecting="ObjectDataSource1_Selecting"></asp:ObjectDataSource>
                         <label>Descripcion:</label>
                         <asp:TextBox ID="descripcionTxt" CssClass="texto" name="user" runat="server" placeholder="Describa el Prospecto"></asp:TextBox>
-                        <label>Fecha Hora:</label>
+                        <%--<label>Fecha Hora:</label>
                         <asp:TextBox ID="fechaHoraTxt" CssClass="texto" name="user" runat="server" placeholder="Fecha y Hora"></asp:TextBox>
                         
-                        
+                        --%>
                             
                         
-                         <label>Origen :</label>
+                         <label>Origen :</label>                            
                         <asp:DropDownList ID="origenList" CssClass="texto listas" runat="server"
                             placeholder="Ingrese la Emprea " DataSourceID="ObjectDataSource2"
                             DataTextField="nombre" DataValueField="idProducto" Height="46px" OnSelectedIndexChanged="ListProducto_SelectedIndexChanged">

@@ -66,11 +66,11 @@ public class UsuarioDto
         UsuarioDS.pr_verificacionUsuariosRow row = table[0];
         return new UsuarioDAO()
         {
+            Nombre = row.Nombre,
             idUsuario = row.idUsuario,
             Usuario = row.Usuario,
             correo = row.Correo,
-            codigoConfirmacion = row.codigoConfirmacion
-            
+            codigoConfirmacion = row.codigoConfirmacion            
         };
 
     }

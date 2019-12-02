@@ -38,11 +38,12 @@ public class EmpresaDto
         EmpresaDSTableAdapters.EmpresaDaoTableAdapter adapter = new EmpresaDSTableAdapters.EmpresaDaoTableAdapter();
         EmpresaDS.EmpresaDaoDataTable table = adapter.pr_selectEmpresaById(empresaId);
 
-        if (table == null || table.Rows.Count != 1)
+        EmpresaDAO obj = null;
+        if (table != null || table.Rows.Count > 0)
         {
-            throw new Exception("La table obtenida no tiene el numero correcto de filas");
+            obj = GetEmpresaFromRow(table[0]);
         }
-        EmpresaDAO obj = GetEmpresaFromRow(table[0]);
+         
         return obj;
     }
 

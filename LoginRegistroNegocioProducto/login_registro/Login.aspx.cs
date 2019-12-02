@@ -13,7 +13,7 @@ public partial class Login : System.Web.UI.Page
     {
         if (Session["UserId"] != null)
         {
-            Response.Redirect("Index.aspx");
+            Response.Redirect("ListaEmpresa.aspx");
         }
     }
     protected void BtnIngresar_Click(object sender, EventArgs e)
@@ -38,7 +38,7 @@ public partial class Login : System.Web.UI.Page
             passTxt.Text = "";
             msgError.Text = "";
             Session["UserId"] = usuario.idUsuario;
-            Response.Redirect("Index.aspx");
+            Response.Redirect("ListaEmpresa.aspx");
             
         }
         catch (Exception E) {

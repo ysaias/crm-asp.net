@@ -30,6 +30,21 @@ public partial class RegistroProducto : System.Web.UI.Page
     {
         if (!IsPostBack)
         {
+            if (Session["NegocioProducto"] != null)
+            {
+                int negocioId = Convert.ToInt32(Session["NegocioProducto"].ToString());
+                if (negocioId <= 0)
+                    Response.Redirect("ListaEmpresa.aspx");
+
+                LineaNegocioDAO objNeg = LineaNegocioDto.GetLineaNegocioById(negocioId);
+                if (objNeg == null)
+                    Response.Redirect("ListaEmpresa.aspx");
+
+                NegocioIdHD.Value = negocioId.ToString();
+
+                NegocioLabel.InnerText = objNeg.nombre;
+                
+            }
             ProcesarParametros();
         }
     }
@@ -63,10 +78,7 @@ public partial class RegistroProducto : System.Web.UI.Page
         {
             ProductoDAO obj = ProductoDto.GetProductoById(productoId);
             NombreTextBox.Text = obj.nombre;
-            descripcionTextBox.Text = obj.descripcion;
-            LineaNegocio_ProductoTxt.Text = obj.LineaNegocio_Producto.ToString();
-           
-
+            descripcionTextBox.Text = obj.descripcion;                      
         }
         catch (Exception ex)
         {
@@ -80,7 +92,7 @@ public partial class RegistroProducto : System.Web.UI.Page
         PanelError.Visible = false;
         try
         {
-            int negocio = Convert.ToInt32(LineaNegocio_ProductoTxt.Text);
+            int negocio = Convert.ToInt32(NegocioIdHD.Value);
 
             int productoId = this.ProductoId;
             ProductoDAO obj = new ProductoDAO()

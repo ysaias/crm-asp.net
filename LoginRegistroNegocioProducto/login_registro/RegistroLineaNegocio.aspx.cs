@@ -29,7 +29,18 @@ public partial class RegistroLineaNegocio : System.Web.UI.Page
     {
         if (!IsPostBack)
         {
-           
+            EmpresaLabel.InnerText = "";
+            if (Session["EmpresaLinea"] != null)
+            {
+                int empresaId = Convert.ToInt32(Session["EmpresaLinea"].ToString());
+                EmpresaIdHD.Value = empresaId.ToString();
+                EmpresaLabel.InnerText = EmpresaDto.GetEmpresaById(empresaId).nombre;
+
+
+            } else
+            {
+                Response.Redirect("ListaEmpresa.aspx");
+            }
             ProcesarParametros();
         }
     }
@@ -62,8 +73,7 @@ public partial class RegistroLineaNegocio : System.Web.UI.Page
         {
             LineaNegocioDAO obj = LineaNegocioDto.GetLineaNegocioById(productoId);
             NombreTextBox.Text = obj.nombre;
-            descripcionTextBox.Text = obj.descripcion;
-            empresa_LineaNegocioTxt.Text = obj.empresaId.ToString();
+            descripcionTextBox.Text = obj.descripcion;            
         }
         catch (Exception ex)
         {
@@ -77,7 +87,7 @@ public partial class RegistroLineaNegocio : System.Web.UI.Page
         PanelError.Visible = false;
         try
         {
-            int empresa = Convert.ToInt32(empresa_LineaNegocioTxt.Text);
+            int empresa = Convert.ToInt32(EmpresaIdHD.Value);
 
             int negocioId = this.NegocioId;
             LineaNegocioDAO obj = new LineaNegocioDAO()

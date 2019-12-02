@@ -105,6 +105,24 @@ public class ProductoDto
         return list;
     }
 
+    public static List<ProductoDAO> GetProductosByLineaNegocio(int negocioId)
+    {
+        ProductoDSTableAdapters.tblProductoTableAdapter adapter = new ProductoDSTableAdapters.tblProductoTableAdapter();
+        ProductoDS.tblProductoDataTable table = adapter.pr_SelectProductoByLineaNegocio(negocioId);
+
+        List<ProductoDAO> list = new List<ProductoDAO>();
+        if (table != null && table.Rows.Count > 0)
+        {
+            foreach (var row in table)
+            {
+                ProductoDAO obj = GetProductoFromRow(row);
+                list.Add(obj);
+            }
+        }
+        
+        return list;
+    }
+
     public static void DeleteProducto(int productoId)
     {
         if (productoId <= 0)

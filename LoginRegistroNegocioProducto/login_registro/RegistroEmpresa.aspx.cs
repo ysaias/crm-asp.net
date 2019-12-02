@@ -33,13 +33,7 @@ public partial class RegistroEmpresa : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
-        {
-            if (Session["UserId"] != null)
-            {
-                int userId = Convert.ToInt32(Session["UserId"].ToString());
-                usuariosTxt.SelectedValue = userId.ToString();
-
-            }
+        {        
             ProcesarParametros();
         }
     }
@@ -94,7 +88,7 @@ public partial class RegistroEmpresa : System.Web.UI.Page
         {
 
             
-            int usuarioID = Convert.ToInt32(usuariosTxt.Text);
+            int usuarioID = Convert.ToInt32(Session["UserId"]);
 
             int empresaId = this.EmpresaId;
             EmpresaDAO obj = new EmpresaDAO()
