@@ -8,6 +8,9 @@ using System.Web.UI.WebControls;
 
 public partial class RegistroProducto : System.Web.UI.Page
 {
+    int empresaId = 0;
+    int userId = 0;
+
     public int ProductoId
     {
         set { ProductoIdHiddenField.Value = value.ToString(); }
@@ -30,6 +33,28 @@ public partial class RegistroProducto : System.Web.UI.Page
     {
         if (!IsPostBack)
         {
+            if (Session["UserId"] != null)
+            {
+                userId = Convert.ToInt32(Session["UserId"].ToString());
+            }
+            else
+            {
+                Response.Redirect("Login.aspx");
+            }
+            if (Session["EmpresaId"] != null)
+            {
+                empresaId = Convert.ToInt32(Session["EmpresaId"].ToString());
+
+
+                LineaNegocio_ProductoTxt.DataSource = LineaNegocioDto.GetLineaNegociosByIdEmpresa(empresaId);
+                LineaNegocio_ProductoTxt.DataBind();
+
+            }
+            else
+            {
+                Response.Redirect("Login.aspx");
+            }
+
             ProcesarParametros();
         }
     }

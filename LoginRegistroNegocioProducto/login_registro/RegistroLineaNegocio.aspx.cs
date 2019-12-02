@@ -7,6 +7,10 @@ using System.Web.UI.WebControls;
 
 public partial class RegistroLineaNegocio : System.Web.UI.Page
 {
+
+    int empresaId = 0;
+    int userId = 0;
+
     public int NegocioId
     {
         set { NegocioIdHiddenField.Value = value.ToString(); }
@@ -29,7 +33,24 @@ public partial class RegistroLineaNegocio : System.Web.UI.Page
     {
         if (!IsPostBack)
         {
-           
+            if (Session["UserId"] != null )
+            {
+                userId = Convert.ToInt32(Session["UserId"].ToString());
+            }
+            else
+            {
+                Response.Redirect("Login.aspx");
+            }
+            if (Session["EmpresaId"] != null)
+            {
+                empresaId = Convert.ToInt32(Session["EmpresaId"].ToString());
+                idLabel.Text = empresaId.ToString();
+            }
+            else
+            {
+                Response.Redirect("RegistroEmpresa.aspx");
+            }
+
             ProcesarParametros();
         }
     }
@@ -56,14 +77,14 @@ public partial class RegistroLineaNegocio : System.Web.UI.Page
             LabelTitle.Text = "Nuevo";
     }
 
-    private void CargarDatos(int productoId)
+    private void CargarDatos(int negocioid)
     {
         try
         {
-            LineaNegocioDAO obj = LineaNegocioDto.GetLineaNegocioById(productoId);
+            LineaNegocioDAO obj = LineaNegocioDto.GetLineaNegocioById(negocioid);
             NombreTextBox.Text = obj.nombre;
             descripcionTextBox.Text = obj.descripcion;
-            empresa_LineaNegocioTxt.Text = obj.empresaId.ToString();
+            idLabel.Text = obj.empresaId.ToString();
         }
         catch (Exception ex)
         {
@@ -77,7 +98,7 @@ public partial class RegistroLineaNegocio : System.Web.UI.Page
         PanelError.Visible = false;
         try
         {
-            int empresa = Convert.ToInt32(empresa_LineaNegocioTxt.Text);
+            int empresa = Convert.ToInt32(idLabel.Text);
 
             int negocioId = this.NegocioId;
             LineaNegocioDAO obj = new LineaNegocioDAO()
@@ -95,7 +116,7 @@ public partial class RegistroLineaNegocio : System.Web.UI.Page
         }
         catch (Exception ex)
         {
-            MsgLiteral.Text = "Error al guardar el Negocio";
+            MsgLiteral.Text = "Error al guardar el Negocio " + ex.Message;
             PanelError.Visible = true;
             return;
         }

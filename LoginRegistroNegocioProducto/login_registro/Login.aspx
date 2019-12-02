@@ -10,8 +10,8 @@
     </head>
 
 <body>
-    <div class="container">
-    <nav class="navbar navbar-expand-md navbar-dark bg-primary sticky-top">
+     <div class="container">
+    <nav class="navbar sticky-top navbar-expand-md navbar-dark bg-dark">
         <a class="navbar-brand" href="Index.aspx">
         <img src="/estilo/img/LogoCrm.svg" width="30" height="30" class="d-inline-block align-top" alt="Logo CRM ALL">
         CRM ALL
@@ -19,14 +19,36 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
-          <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
 
         <div class="navbar-nav mr-auto ml-auto text-center">
          <a class="nav-item nav-link active" href="index.aspx">Inicio </a>
-         <a class="nav-item nav-link" href="RegistroOportunidadd.aspx">Oportunidad </a>
+         
+            <div class="nav-item dropdown">
+             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLinkActividad" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                OPORTUNIDAD 
+             </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="RegistroCliente.aspx">Cliente</a>
+                  <a class="nav-item nav-link" href="RegistroOportunidadd.aspx">Oportunidad </a>
+                  <a class="dropdown-item" href="Registroactividad.aspx">Actividad</a>
+                </div>
+         </div>
+            <div class="nav-item dropdown">
+             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLinkOportunidad" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Registar Cliente 
+             </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  
+                  <a class="dropdown-item" href="RegistroPais.aspx">Pais</a>      
+                  <a class="dropdown-item" href="RegistroCiudad.aspx">Ciudad</a>                  
+                  <a class="dropdown-item" href="RegistroMedio.aspx">Medio</a>
+                  <a class="dropdown-item" href="RegistroOrigen.aspx">Origen</a>
+                </div>
+         </div>
          <div class="nav-item dropdown">
              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                 Registrar
+                Registrar
              </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                   <a class="dropdown-item" href="RegistroLineaNegocio.aspx">Negocio</a>
@@ -36,8 +58,7 @@
                 </div>
          </div>
          <a class="nav-item nav-link" href="Registro.aspx">Registo </a>
-         <a class="nav-item nav-link" href="Login.aspx">Login </a>   
-
+         <a class="nav-item nav-link" href="Login.aspx">Login </a> 
         </div>
           </div>
     </nav>

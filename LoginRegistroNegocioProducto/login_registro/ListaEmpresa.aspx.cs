@@ -17,6 +17,10 @@ public partial class ListaEmpresa : System.Web.UI.Page
             {
                 userId = Convert.ToInt32(Session["UserId"].ToString());
             }
+            else
+            {
+                Response.Redirect("Login.aspx");
+            }
             CargarListaEmpresas();
         }
     }
@@ -52,6 +56,12 @@ public partial class ListaEmpresa : System.Web.UI.Page
         {
             Response.Redirect("RegistroEmpresa.aspx?empresaId=" + empresaId);
             return;
+        }
+        if (e.CommandName == "Usar")
+        {
+            Session["EmpresaId"] = empresaId;
+            Response.Redirect("Index.aspx");
+           
         }
         if (e.CommandName == "Eliminar")
         {

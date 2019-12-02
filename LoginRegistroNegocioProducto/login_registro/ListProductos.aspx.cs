@@ -7,21 +7,42 @@ using System.Web.UI.WebControls;
 
 public partial class ListProductos : System.Web.UI.Page
 {
+    int empresaId = 0;
+    int userId = 0;
+
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
         {
-            CargarProductos();
+            if (Session["UserId"] != null)
+            {
+                userId = Convert.ToInt32(Session["UserId"].ToString());
+            }
+            else
+            {
+                Response.Redirect("Login.aspx");
+            }
+            if (Session["EmpresaId"] != null)
+            {
+                empresaId = Convert.ToInt32(Session["EmpresaId"].ToString());
+            }
+            else
+            {
+                Response.Redirect("ListaEmpresa.aspx");
+            }
+
+
+            CargarProductos(empresaId);
 
 
         }
     }
 
-    private void CargarProductos()
+    private void CargarProductos(int idEmpresa)
     {
         try
         {
-            List<ProductoDAO> productos = ProductoDto.GetProductos();
+            List<ProductoDAO> productos = ProductoDto.GetProductosByIdEMpresa(idEmpresa);
             ProductosGridView.DataSource = productos;
             ProductosGridView.DataBind();
         }
@@ -54,7 +75,7 @@ public partial class ListProductos : System.Web.UI.Page
             try
             {
                 ProductoDto.DeleteProducto(productoId);
-                CargarProductos();
+                CargarProductos(empresaId);
             }
             catch (Exception ex)
             {

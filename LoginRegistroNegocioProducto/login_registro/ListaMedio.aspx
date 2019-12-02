@@ -1,14 +1,14 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ListaEmpresa.aspx.cs" Inherits="ListaEmpresa" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ListaMedio.aspx.cs" Inherits="ListaMedio" %>
 
 <!DOCTYPE html>
 
 <html>
 <head>
  <meta charset='utf-8'>
-        <title>Lista Empresa</title>
+        <title>Lista Medios</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" > 
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> 
         <link href="../App_Themes/Default/A.bootstrap.min.css" type="text/css" rel="stylesheet" />
         <link href="../App_Themes/Default/B.style.css" type="text/css" rel="stylesheet" />
         <link href="../App_Themes/Default/css/fontawesome-all.min.css" type="text/css" rel="stylesheet" />
@@ -21,9 +21,9 @@
             
     <div class="row">
         <div class="col-12">
-            <h1>Lista Empresas</h1>
-            <asp:HyperLink runat="server" NavigateUrl="~/RegistroEmpresa.aspx" CssClass="btn btn-primary">
-                Nueva Empresa
+            <h2>Lista Medios</h2>
+            <asp:HyperLink runat="server" NavigateUrl="~/RegistroMedio.aspx" CssClass="btn btn-primary">
+                Nuevo Medio
             </asp:HyperLink>
             <br /><br />
         </div>
@@ -31,14 +31,14 @@
     <div class="row">
         <div class="col-12">
             
-            <asp:GridView ID="EmpresasGridView" runat="server" CssClass="table" 
+            <asp:GridView ID="paisGridView" runat="server" CssClass="table" 
                 GridLines="None" AutoGenerateColumns="false"
-                OnRowCommand="EmpresascioGridView_RowCommand"> 
+                OnRowCommand="paisGridView_RowCommand"> 
                 <Columns>
                     <asp:TemplateField HeaderText="Editar">
                         <ItemTemplate>
                             <asp:LinkButton ID="EditBtn" runat="server" CommandName="Editar"
-                                CommandArgument='<%# Eval("empresaId") %>'>
+                                CommandArgument='<%# Eval("idMedio") %>'>
                                 <i class="fas fa-edit"></i>
                             </asp:LinkButton>
                         </ItemTemplate>
@@ -47,26 +47,13 @@
                     <asp:TemplateField HeaderText="Eliminar">
                         <ItemTemplate>
                             <asp:LinkButton ID="DeleteBtn" runat="server" CommandName="Eliminar"
-                                OnClientClick="return confirm('¿Esta seguro que desea eliminar esta empresa')"
-                                CommandArgument='<%# Eval("empresaId") %>'>
+                                OnClientClick="return confirm('¿Esta seguro que desea eliminar este producto?')"
+                                CommandArgument='<%# Eval("idMedio") %>'>
                                 <i class="fas fa-trash-alt text-danger"></i>
                             </asp:LinkButton>
                         </ItemTemplate>
                     </asp:TemplateField>
-                     <asp:TemplateField HeaderText="Usar">
-                        <ItemTemplate>
-                            <asp:LinkButton ID="UsarBtn" runat="server" CommandName="Usar"
-                                OnClientClick="return confirm('¿Seguro que desea usar esta empresa?')"
-                                CommandArgument='<%# Eval("empresaId") %>'>
-                                <i class="fas fa-check-circle"></i>
-                            </asp:LinkButton>
-                        </ItemTemplate>
-                    </asp:TemplateField>
                     <asp:BoundField HeaderText="Nombre" DataField="nombre" />
-                    <asp:BoundField HeaderText="Descripcion" DataField="Descripcion" />
-                    <asp:BoundField HeaderText="Telefono" DataField="telefono" />
-                    <asp:BoundField HeaderText="Email" DataField="email" />
-                    <asp:BoundField HeaderText="Usuario" DataField="UsuarioId" />
                 </Columns>
             </asp:GridView>
 
@@ -85,3 +72,4 @@
 
 </body>
 </html>
+

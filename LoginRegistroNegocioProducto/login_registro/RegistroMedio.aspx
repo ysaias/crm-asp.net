@@ -1,11 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="RegistroLineaNegocio.aspx.cs" Inherits="RegistroLineaNegocio" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="RegistroMedio.aspx.cs" Inherits="RegistroMedio" %>
 
 <!DOCTYPE html>
 
 <html>
 <head>
         <meta charset='utf-8'>
-        <title>Linea de Negocio</title>
+        <title>Registro Medio</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" >
         <link rel="stylesheet" href="estilo/css/style2.css">
@@ -70,12 +70,12 @@
            
                 <div class="row">
                   <div class="col-12">
-                        <h1>
+                        <h2>
                             <asp:Literal runat="server" ID="LabelTitle"></asp:Literal>
-                            Negocio
-                        </h1>            
-                        <asp:HyperLink runat="server" NavigateUrl="ListaLineaNegocio.aspx">
-                            Volver a la Lista de Negocios
+                            Medio
+                        </h2>            
+                        <asp:HyperLink runat="server" NavigateUrl="ListaMedio.aspx">
+                            Volver a la Lista Medio
                         </asp:HyperLink>
 
                         <asp:Panel ID="PanelError" runat="server" Visible="false" CssClass="alert alert-danger" role="alert">
@@ -101,24 +101,6 @@
                         </div>
             
 
-                        <div class="form-group">
-                            <label>Descripcion</label>
-                            <asp:TextBox ID="descripcionTextBox"  runat="server" CssClass="form-control"></asp:TextBox>
-                            <div class="text-danger">
-                                <asp:RequiredFieldValidator runat="server" Display="Dynamic"
-                                    ErrorMessage="Debe ingresar el la descripcion del Negocio"
-                                    ValidationGroup="Producto"
-                                    ControlToValidate="descripcionTextBox">
-                                </asp:RequiredFieldValidator>
-                            </div>
-                        </div>
-
-            
-                        <div class="form-group">
-                        <label>Empresa:</label>
-                        <asp:Label ID="idLabel" runat="server" Text="Label"></asp:Label>
-                        </div>
-
 
                         <div class="form-group">
                             <asp:LinkButton ID="SaveButton" runat="server" OnClick="SaveButton_Click"
@@ -132,10 +114,10 @@
                         </div>
                     </div>
                 </div>
-                <asp:HiddenField ID="NegocioIdHiddenField" runat="server" Value="0" />
+                <asp:HiddenField ID="ciudadIdHiddenField" runat="server" Value="0" />
             </form>
         <asp:Label ID="msgError" runat="server" BorderColor="White"></asp:Label>
-      </div>
+     </div>
 
 
            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>

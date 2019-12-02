@@ -1,0 +1,63 @@
+﻿
+
+.hora label {
+    display: block;
+    font: 1rem 'Fira Sans', sans-serif;
+}
+
+.hora input,
+label {
+    margin: .4rem 0;
+}
+
+.fecha label {
+    display: block;
+    font: 1rem 'Fira Sans', sans-serif;
+}
+
+.fecha  input,
+label {
+    margin: .4rem 0;
+}
+
+#medio_Txt {
+    margin-right: 150px;
+}
+
+.hora input {
+    width: 110%;
+}
+
+.fecha input {
+    width: 120%;
+}
+
+#OportunidadidLabel {
+    margin-left: 20px;
+    margin-top: 6px;
+}
+#formActividad {
+    width: 300px;
+    height: 400px;
+}
+
+.registroOportunidad {
+    width: 300px;
+    height: 500px;
+}
+
+.registroLineaNegocio {
+   
+    height: 530px;
+   
+}
+
+#registroLineaNegocio {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.btn {
+    margin-left: 20px;
+}

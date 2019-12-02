@@ -9,11 +9,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" >
         <link rel="stylesheet" href="estilo/css/style2.css">
-        <link rel ="stylesheet" href="estilo/css/StyleLineaNegocio.css" > 
+        <link rel ="stylesheet" href="estilo/css/StyleLineaNegocio.css" >
+        <link rel="stylesheet" href="estilo/css/StyleEmpresa.css" />
 
         
 </head><body>
-    <div class="container">
+     <div class="container">
     <nav class="navbar sticky-top navbar-expand-md navbar-dark bg-dark">
         <a class="navbar-brand" href="Index.aspx">
         <img src="/estilo/img/LogoCrm.svg" width="30" height="30" class="d-inline-block align-top" alt="Logo CRM ALL">
@@ -26,15 +27,26 @@
 
         <div class="navbar-nav mr-auto ml-auto text-center">
          <a class="nav-item nav-link active" href="index.aspx">Inicio </a>
-         <a class="nav-item nav-link" href="RegistroOportunidadd.aspx">Oportunidad </a>
-           <div class="nav-item dropdown">
-             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLinkOportunidad" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Oportunidad 
+         
+            <div class="nav-item dropdown">
+             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLinkActividad" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                OPORTUNIDAD 
              </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                   <a class="dropdown-item" href="RegistroCliente.aspx">Cliente</a>
+                  <a class="dropdown-item" href="RegistroOportunidadd.aspx">Oportunidad </a>
+                </div>
+         </div>
+            <div class="nav-item dropdown">
+             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLinkOportunidad" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Registar Cliente 
+             </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  
                   <a class="dropdown-item" href="RegistroPais.aspx">Pais</a>      
-                  <a class="dropdown-item" href="RegistroCiudad.aspx">Ciudad</a>
+                  <a class="dropdown-item" href="RegistroCiudad.aspx">Ciudad</a>                  
+                  <a class="dropdown-item" href="RegistroMedio.aspx">Medio</a>
+                  <a class="dropdown-item" href="RegistroOrigen.aspx">Origen</a>
                 </div>
          </div>
          <div class="nav-item dropdown">
@@ -54,15 +66,15 @@
           </div>
     </nav>
     </div>
-    <div class="registroLineaNegocio">
+    <div class="registroEmpresa">
             <form id="registroLineaNegocio" runat="server" method="post">
            
                 <div class="row">
                   <div class="col-12">
-                        <h1>
+                        <h2>
                             <asp:Literal runat="server" ID="LabelTitle"></asp:Literal>
                             Empresa
-                        </h1>            
+                        </h2>            
                         <asp:HyperLink runat="server" NavigateUrl="~/ListaEmpresa.aspx">
                             Volver a la Lista de Empresas
                         </asp:HyperLink>
@@ -127,15 +139,8 @@
                         </div>
 
                         <div class="form-group">
-                        <label>Usuarios:</label>
-                        <asp:DropDownList ID="usuariosTxt" CssClass="texto"  runat="server" 
-                        placeholder="Ingrese el Usuario " Height="46px" DataSourceID="ObjectDataSource1" DataTextField="Usuario" DataValueField="idUsuario" >
-                        </asp:DropDownList>
-                        <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" OldValuesParameterFormatString="original_{0}"
-                        SelectMethod="pr_SelectUsuario" TypeName="UsuarioDSTableAdapters.pr_verificacionUsuariosTableAdapter" 
-                        OnSelecting="ObjectDataSource1_Selecting">
-                             
-                        </asp:ObjectDataSource>
+                        <label>Usuario:</label>
+                        <asp:TextBox ID="usuarioTxt"  runat="server" CssClass="form-control"></asp:TextBox>
                         </div>
 
                                                                      

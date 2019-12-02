@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 public partial class RegistroEmpresa : System.Web.UI.Page
 {
-    
+    private int userId;
 
     public int EmpresaId
     {
@@ -28,6 +28,7 @@ public partial class RegistroEmpresa : System.Web.UI.Page
         }
     }
 
+   
 
 
     protected void Page_Load(object sender, EventArgs e)
@@ -36,11 +37,15 @@ public partial class RegistroEmpresa : System.Web.UI.Page
         {
             if (Session["UserId"] != null)
             {
-                int userId = Convert.ToInt32(Session["UserId"].ToString());
-                usuariosTxt.SelectedValue = userId.ToString();
-
+                userId = Convert.ToInt32(Session["UserId"].ToString());
+                usuarioTxt.Text = userId.ToString();
             }
+            else {
+                Response.Redirect("Login.aspx");
+            }
+
             ProcesarParametros();
+
         }
     }
 
@@ -71,12 +76,12 @@ public partial class RegistroEmpresa : System.Web.UI.Page
     {
         try
         {
-            EmpresaDAO obj = EmpresaDto.GetEmpresaById(empresaId);
+            EmpresaDAO obj = EmpresaDto.GetEmpresaById(EmpresaId);
             NombreTextBox.Text = obj.nombre;
             descripcionTextBox.Text = obj.Descripcion;
             telefonoTextBox.Text = obj.telefono.ToString();
             emailTextBox.Text = obj.email;
-
+            userId = obj.UsuarioId; 
             
 
         }
@@ -92,9 +97,8 @@ public partial class RegistroEmpresa : System.Web.UI.Page
         PanelError.Visible = false;
         try
         {
-
             
-            int usuarioID = Convert.ToInt32(usuariosTxt.Text);
+            int usuarioID = Convert.ToInt32(usuarioTxt.Text);
 
             int empresaId = this.EmpresaId;
             EmpresaDAO obj = new EmpresaDAO()

@@ -7,21 +7,42 @@ using System.Web.UI.WebControls;
 
 public partial class ListaLineaNegocio : System.Web.UI.Page
 {
+    int empresaId = 0;
+    int userId = 0;
+
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
         {
-            CargarLineaNegocios();
+            if (Session["UserId"] != null)
+            {
+                userId = Convert.ToInt32(Session["UserId"].ToString());
+            }
+            else
+            {
+                Response.Redirect("Login.aspx");
+            }
+            if (Session["EmpresaId"] != null)
+            {
+                empresaId = Convert.ToInt32(Session["EmpresaId"].ToString());
+            }
+            else
+            {
+                Response.Redirect("ListaEmpresa.aspx");
+            }
+
+
+            CargarLineaNegocios(empresaId);
 
 
         }
     }
 
-    private void CargarLineaNegocios()
+    private void CargarLineaNegocios(int idEmpresa)
     {
         try
         {
-            List<LineaNegocioDAO> negocios = LineaNegocioDto.GetLineaNegocios();
+            List<LineaNegocioDAO> negocios = LineaNegocioDto.GetLineaNegociosByIdEmpresa(idEmpresa);
             NegociosGridView.DataSource = negocios;
             NegociosGridView.DataBind();
         }
@@ -54,7 +75,7 @@ public partial class ListaLineaNegocio : System.Web.UI.Page
             try
             {
                 LineaNegocioDto.DeleteLineaNegocio(negocioId);
-                CargarLineaNegocios();
+                CargarLineaNegocios(empresaId);
             }
             catch (Exception ex)
             {
