@@ -43,11 +43,11 @@ public partial class RegistroCliente : System.Web.UI.Page
 
     private void ProcesarParametros()
     {
-        if (Request.QueryString["idOportnidad"] != null && !string.IsNullOrEmpty(Request.QueryString["idOportnidad"]))
+        if (Request.QueryString["idOportunidad"] != null && !string.IsNullOrEmpty(Request.QueryString["idOportunidad"]))
         {
             try
             {
-                OportunidadId = Convert.ToInt32(Request.QueryString["idOportnidad"]);
+                OportunidadId = Convert.ToInt32(Request.QueryString["idOportunidad"]);
             }
             catch (Exception ex)
             {
@@ -56,7 +56,6 @@ public partial class RegistroCliente : System.Web.UI.Page
         }
         if (OportunidadId > 0)
         {
-            System.Diagnostics.Debug.WriteLine("Entro aqui " + OportunidadId);
             LabelTitle.Text = "Editar";
             CargarDatos(OportunidadId);
         }
@@ -96,7 +95,7 @@ public partial class RegistroCliente : System.Web.UI.Page
             string LineaNegocio = (ListNegocio.Text).Trim();
             string Producto = (ListProducto.Text).Trim();
             string descripcion = (descripcionTxt.Text).Trim();
-            
+            //string fechaHora = (fechaHoraTxt.Text).Trim();
             string Origen = (origenList.Text).Trim();
             string Cliente = (ListEjecutivo.Text).Trim();
             string Usuario = (clienteList.Text).Trim();
@@ -127,7 +126,12 @@ public partial class RegistroCliente : System.Web.UI.Page
                 return;
 
             }
+           // if (fechaHora.Equals(""))
+            //{
+              //  msgError.Text = "Ingrese la fecha";
+                //return;
 
+            //}
 
             if (Origen.Equals(""))
             {
@@ -153,9 +157,9 @@ public partial class RegistroCliente : System.Web.UI.Page
             OportunidadDAO obj = new OportunidadDAO()
             {
                 idLineadeNegocio = Convert.ToInt32(LineaNegocio),
-                idOportunidad = Convert.ToInt32(Producto),
+                idProducto = Convert.ToInt32(Producto),
                 Descripcion = descripcion,
-                fechaHora = DateTime.Now,
+                fechaHora = DateTime.Now.ToLocalTime(),
                 idOrigen = Convert.ToInt32(Origen),
                 idCliente = Convert.ToInt32(Cliente),
                 idUsuario = Convert.ToInt32(Usuario)
@@ -174,7 +178,7 @@ public partial class RegistroCliente : System.Web.UI.Page
         {
             msgError.Text = "Error al optener los datos" + ex.Message;
 
-            MsgLiteral.Text = "Error al guardar el cliente";
+            MsgLiteral.Text = "Error al guardar la oportunidad";
             PanelError.Visible = true;
             return;
         }

@@ -2,40 +2,57 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html >
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta charset= "utf-8">
     <title></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" > 
+        <link href="../App_Themes/Default/A.bootstrap.min.css" type="text/css" rel="stylesheet" />
+        <link href="../App_Themes/Default/B.style.css" type="text/css" rel="stylesheet" />
+        <link href="../App_Themes/Default/css/fontawesome-all.min.css" type="text/css" rel="stylesheet" />
+        <link href="../estilo/css/StyleActividad.css" rel="stylesheet"/>
+
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="form1" runat="server" >
         <asp:Button ID="btn" runat="server" Text="Enviar" OnClick="btn_Click" />
 
-         <asp:Button ID="btnDate" runat="server" Text="Fecha" OnClick="btn_ClickDate" />
+         <asp:Button ID="btnDate" runat="server" value="enviar" Text="Fecha" OnClick="btn_ClickDate" />
 
             <div class="row">
                  <div class="col-md-6 themed-grid-col">
-                    <asp:Calendar ID="Calendar1" runat="server" BackColor="White" BorderColor="#999999" CellPadding="4" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" Height="180px" Width="200px" OnSelectionChanged="Calendar1_SelectionChanged">
-                        <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" />
-                        <NextPrevStyle VerticalAlign="Bottom" />
-                        <OtherMonthDayStyle ForeColor="#808080" />
-                        <SelectedDayStyle BackColor="#666666" Font-Bold="True" ForeColor="White" />
-                        <SelectorStyle BackColor="#CCCCCC" />
-                        <TitleStyle BackColor="#999999" BorderColor="Black" Font-Bold="True" />
-                        <TodayDayStyle BackColor="#CCCCCC" ForeColor="Black" />
-                        <WeekendDayStyle BackColor="#FFFFCC" />
-                    </asp:Calendar>
-                 </div>   
+                      <div class="fecha">
+                        <asp:TextBox ID="from_date" runat="server" placeholder="From" type="date" value="2019-12-01"
+                            min="2018-01-01" max="2030-12-31"></asp:TextBox>
+                      </div>
+                      <div class="hora">
+                        <asp:TextBox ID="from_time" type="time" name="hora" runat="server"
+                            value="09:45:00" max="22:30:00" min="07:00:00" step="1"></asp:TextBox> 
+
+                     </div>
+                 </div>
+                
             </div>
 
 
-             <div class="row">
-                 
-                
-           </div>
          
         <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+        <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
+        <br />
+
+     
+	
+      
+	
+
+
 
     </form>
+
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
 </body>
 </html>

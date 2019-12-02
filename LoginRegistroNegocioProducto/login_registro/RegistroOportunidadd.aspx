@@ -13,7 +13,7 @@
 
         
 </head><body>
-    <div class="container">
+     <div class="container">
     <nav class="navbar sticky-top navbar-expand-md navbar-dark bg-dark">
         <a class="navbar-brand" href="Index.aspx">
         <img src="/estilo/img/LogoCrm.svg" width="30" height="30" class="d-inline-block align-top" alt="Logo CRM ALL">
@@ -22,19 +22,30 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
-          <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
 
         <div class="navbar-nav mr-auto ml-auto text-center">
          <a class="nav-item nav-link active" href="index.aspx">Inicio </a>
-         <a class="nav-item nav-link" href="RegistroOportunidadd.aspx">Oportunidad </a>
-           <div class="nav-item dropdown">
-             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLinkOportunidad" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Oportunidad 
+         
+            <div class="nav-item dropdown">
+             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLinkActividad" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                OPORTUNIDAD 
              </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                   <a class="dropdown-item" href="RegistroCliente.aspx">Cliente</a>
+                  <a class="dropdown-item" href="RegistroOportunidadd.aspx">Oportunidad </a>
+                </div>
+         </div>
+            <div class="nav-item dropdown">
+             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLinkOportunidad" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Registar Cliente 
+             </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  
                   <a class="dropdown-item" href="RegistroPais.aspx">Pais</a>      
-                  <a class="dropdown-item" href="RegistroCiudad.aspx">Ciudad</a>
+                  <a class="dropdown-item" href="RegistroCiudad.aspx">Ciudad</a>                  
+                  <a class="dropdown-item" href="RegistroMedio.aspx">Medio</a>
+                  <a class="dropdown-item" href="RegistroOrigen.aspx">Origen</a>
                 </div>
          </div>
          <div class="nav-item dropdown">
@@ -63,7 +74,7 @@
                             <asp:Literal runat="server" ID="LabelTitle"></asp:Literal>
                             Oportunidad
                         </h2>            
-                        <asp:HyperLink runat="server" NavigateUrl="~/ListaOportunidad.aspx">
+                        <asp:HyperLink runat="server" NavigateUrl="~/ListOportunidad.aspx">
                             Volver a la Lista de Oportunidad
                         </asp:HyperLink>
 
@@ -98,16 +109,16 @@
                             OnSelecting="ObjectDataSource1_Selecting"></asp:ObjectDataSource>
                         <label>Descripcion:</label>
                         <asp:TextBox ID="descripcionTxt" CssClass="texto" name="user" runat="server" placeholder="Describa el Prospecto"></asp:TextBox>
-                        <%--<label>Fecha Hora:</label>
-                        <asp:TextBox ID="fechaHoraTxt" CssClass="texto" name="user" runat="server" placeholder="Fecha y Hora"></asp:TextBox>
+                        <label>Fecha Hora:</label>
+                        <asp:TextBox ID="fechaHoraTxt" CssClass="texto" name="user" runat="server" placeholder="Fecha y Hora" TextMode="DateTime"></asp:TextBox>
                         
                         --%>
                             
                         
                          <label>Origen :</label>                            
                         <asp:DropDownList ID="origenList" CssClass="texto listas" runat="server"
-                            placeholder="Ingrese la Emprea " DataSourceID="ObjectDataSource2"
-                            DataTextField="nombre" DataValueField="idProducto" Height="46px" OnSelectedIndexChanged="ListProducto_SelectedIndexChanged">
+                            placeholder="Ingrese la Emprea " DataSourceID="ObjectDataSource4"
+                            DataTextField="Nombre" DataValueField="idOrigen" Height="46px" OnSelectedIndexChanged="ListProducto_SelectedIndexChanged">
                         </asp:DropDownList>
                         <asp:ObjectDataSource ID="ObjectDataSource4" runat="server" OldValuesParameterFormatString="original_{0}"
                             SelectMethod="pr_SelectOrigen" TypeName="OrigenDSTableAdapters.tblOrigenTableAdapter"
@@ -137,7 +148,7 @@
                                 ValidationGroup="Producto">
                                 Guardar
                             </asp:LinkButton>
-                            <asp:HyperLink runat="server" NavigateUrl="ListCliente.aspx" CssClass="btn">
+                            <asp:HyperLink runat="server" NavigateUrl="ListOpotunidad.aspx" CssClass="btn">
                                 Cancelar
                             </asp:HyperLink>
                         </div>
@@ -152,7 +163,9 @@
         <asp:Label ID="msgError" runat="server" BorderColor="White"></asp:Label>
      </div>
 
-
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
           
 </body>
 </html>

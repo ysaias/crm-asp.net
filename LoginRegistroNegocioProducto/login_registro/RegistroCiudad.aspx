@@ -13,7 +13,7 @@
 
         
 </head><body>
-    <div class="container">
+     <div class="container">
     <nav class="navbar sticky-top navbar-expand-md navbar-dark bg-dark">
         <a class="navbar-brand" href="Index.aspx">
         <img src="/estilo/img/LogoCrm.svg" width="30" height="30" class="d-inline-block align-top" alt="Logo CRM ALL">
@@ -26,15 +26,26 @@
 
         <div class="navbar-nav mr-auto ml-auto text-center">
          <a class="nav-item nav-link active" href="index.aspx">Inicio </a>
-         <a class="nav-item nav-link" href="RegistroOportunidadd.aspx">Oportunidad </a>
-           <div class="nav-item dropdown">
-             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLinkOportunidad" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Oportunidad 
+         
+            <div class="nav-item dropdown">
+             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLinkActividad" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                OPORTUNIDAD 
              </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                   <a class="dropdown-item" href="RegistroCliente.aspx">Cliente</a>
+                  <a class="dropdown-item" href="RegistroOportunidadd.aspx">Oportunidad </a>
+                </div>
+         </div>
+            <div class="nav-item dropdown">
+             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLinkOportunidad" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Registar Cliente 
+             </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  
                   <a class="dropdown-item" href="RegistroPais.aspx">Pais</a>      
-                  <a class="dropdown-item" href="RegistroCiudad.aspx">Ciudad</a>
+                  <a class="dropdown-item" href="RegistroCiudad.aspx">Ciudad</a>                  
+                  <a class="dropdown-item" href="RegistroMedio.aspx">Medio</a>
+                  <a class="dropdown-item" href="RegistroOrigen.aspx">Origen</a>
                 </div>
          </div>
          <div class="nav-item dropdown">

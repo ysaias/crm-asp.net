@@ -105,7 +105,7 @@ public partial class RegistroLineaNegocio : System.Web.UI.Page
         }
         catch (Exception ex)
         {
-            MsgLiteral.Text = "Error al guardar el Negocio";
+            MsgLiteral.Text = "Error al guardar el Negocio " + ex.Message;
             PanelError.Visible = true;
             return;
         }

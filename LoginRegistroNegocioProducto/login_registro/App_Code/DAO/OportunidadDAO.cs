@@ -15,12 +15,14 @@ public class OportunidadDAO{
     public string Descripcion { get; set; }
     public DateTime fechaHora { get; set; }
     public int idOrigen { get; set; }
-    public int idCliente { get; set; }
     public int idUsuario { get; set; }
+    public int idCliente { get; set; }
 
 
     public OportunidadDAO()
     {
 
     }
+
+   
 }

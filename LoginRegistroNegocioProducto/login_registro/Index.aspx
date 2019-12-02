@@ -85,50 +85,73 @@
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="active">
-                        <a href="index.aspx"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
+                        <a href="index.aspx"><i class="menu-icon fa fa-laptop"></i>Inicio </a>
                     </li>
+
                     <li class="menu-title">Elementos</li>
                     <!-- /.menu-title -->
                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="menu-icon fa fa-cogs"></i>REGISTROS</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="menu-icon fa fa-cogs"></i>CREAR EMPRESA</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="fa fa-id-badge"></i><a href="RegistroEmpresa.aspx">Registro Empresa</a></li>
-                            <li><i class="fa fa-table"></i><a href="RegistroLineaNegocio.aspx">Registro Linea</a></li>
-                            <li><i class="menu-icon fa fa-th"></i><a href="RegistroProducto.aspx">Registro Producto</a></li>
+                            <li><i class="fa fa-table"></i><a href="RegistroLineaNegocio.aspx">Registro Linea Negocio</a></li>
+                            <li><i class="fa fa-id-badge"></i><a href="RegistroProducto.aspx">Registro Producto</a></li>                                   
+                            <li><i class="fa fa-id-badge"></i><a href="RegistroPais.aspx">Registro Pais</a></li>
+                            <li><i class="fa fa-id-badge"></i><a href="RegistroCiudad.aspx">Registro Ciudad</a></li>
+                            <li><i class="fa fa-id-badge"></i><a href="RegistroOrigen.aspx">Registro Origen</a></li>
+                            <li><i class="fa fa-id-badge"></i><a href="RegistroMedio.aspx">Registro Medio</a></li>
                             
                         </ul>
                     </li>
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="menu-icon fa fa-table"></i>LISTAS</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-bars"></i><a href="ListaEmpresa.aspx">Lista de Empresa</a></li>
-                            <li><i class="fa fa-table"></i><a href="ListaLineaNegocio.aspx">Lista de Linea </a></li>
-                            <li><i class="menu-icon fa fa-th"></i><a href="ListProductos.aspx">Lista Producto</a></li>
-
+                            <li><i class="fa fa-bars"></i><a href="ListaEmpresa.aspx">Empresas</a></li>
+                            <li><i class="fa fa-bars"></i><a href="ListaLineaNegocio.aspx">Linea de Negocios </a></li>
+                            <li><i class="fa fa-bars"></i><a href="ListProductos.aspx">Productos</a></li>
+                            <li><i class="fa fa-bars"></i><a href="ListaPais.aspx">Pais</a></li>
+                            <li><i class="fa fa-bars"></i><a href="ListaCiudad.aspx">Ciudades</a></li>
+                            <li><i class="fa fa-bars"></i><a href="ListaOrigen.aspx">Origen</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="ListaMedio.aspx">Medios</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="ListCliente.aspx">Clientes</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="ListaActividad.aspx">Actividades</a></li>
                         </ul>
                     </li>
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="menu-icon fa fa-th"></i>OPORTUNIDAD</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-th"></i><a href="RegistroCliente.aspx">Registro Cliente</a></li>
-                            <li><i class="menu-icon fa fa-th"></i><a href="RegistroPais.aspx">Registro Pais</a></li>
-                            <li><i class="menu-icon fa fa-th"></i><a href="RegistroCiudad.aspx">Registro</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="RegistroOportunidadd.aspx">Registro Oportunidad</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="RegistroActividad.aspx">Registro Actividad</a></li>
 
                         </ul>
                     </li>
 
-                    <li class="menu-title">Icons</li>
+                     <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="menu-icon fa fa-th"></i>REGISTRO CLIENTE</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon fa fa-th"></i><a href="RegistroCliente.aspx">Registro Cliente</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="ListCliente.aspx">Lista Cliente</a></li>
+                            
+
+                        </ul>
+                    </li>
+
+                    <li class="menu-title">Usuario</li>
                     <!-- /.menu-title -->
 
                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="menu-icon fa fa-tasks"></i>Icons</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="menu-icon fa fa-tasks"></i>Registro</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-fort-awesome"></i><a href="Login.aspx">Font Awesome</a></li>
-                            <li><i class="menu-icon ti-themify-logo"></i><a href="font-themify.html">Themefy Icons</a></li>
+                            <li><i class="menu-icon fa fa-fort-awesome"></i><a href="Registro.aspx">Registro Usuario</a></li>
+                            <li><i class="menu-icon ti-themify-logo"></i><a href="ListaUsuario.aspx">Lista Usuarios</a></li>
+
                         </ul>
                     </li>
                     <li>
-                        <a href="widgets.html"><i class="menu-icon ti-email"></i>Widgets </a>
+                        <a href="Login.aspx"><i class="menu-icon ti-email"></i>LogIn</a>
+                    </li>
+                    <li>
+                        <a href="LogOut.aspx"><i class="menu-icon ti-email"></i>LogOut</a>
                     </li>
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="menu-icon fa fa-bar-chart"></i>Charts</a>

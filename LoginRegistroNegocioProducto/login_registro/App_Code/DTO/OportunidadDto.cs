@@ -123,7 +123,7 @@ public class OportunidadDto
 
 
 
-    public static List<OportunidadDAO> GetCliente()
+    public static List<OportunidadDAO> GetOportunidadList()
     {
         OportunidadDSTableAdapters.tblOportunidadTableAdapter adapter = new OportunidadDSTableAdapters.tblOportunidadTableAdapter();
         OportunidadDS.tblOportunidadDataTable table = adapter.pr_SelectOportunidad();

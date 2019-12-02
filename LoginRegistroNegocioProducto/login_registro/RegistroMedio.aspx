@@ -1,11 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="RegistroLineaNegocio.aspx.cs" Inherits="RegistroLineaNegocio" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="RegistroMedio.aspx.cs" Inherits="RegistroMedio" %>
 
 <!DOCTYPE html>
 
 <html>
 <head>
-    <meta charset='utf-8'>
-        <title>Linea de Negocio</title>
+        <meta charset='utf-8'>
+        <title>Registro Medio</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" >
         <link rel="stylesheet" href="estilo/css/style2.css">
@@ -56,65 +56,51 @@
                   <a class="dropdown-item" href="RegistroLineaNegocio.aspx">Negocio</a>
                   <a class="dropdown-item" href="RegistroProducto.aspx">Producto</a>
                   <a class="dropdown-item" href="RegistroEmpresa.aspx">Empresa</a>
-
+      
                 </div>
-            </div>
-        </nav>
+         </div>
+         <a class="nav-item nav-link" href="Registro.aspx">Registo </a>
+         <a class="nav-item nav-link" href="Login.aspx">Login </a> 
+        </div>
+          </div>
+    </nav>
     </div>
     <div class="registroLineaNegocio">
-        <form id="registroLineaNegocio" runat="server" method="post">
+            <form id="registroLineaNegocio" runat="server" method="post">
+           
+                <div class="row">
+                  <div class="col-12">
+                        <h2>
+                            <asp:Literal runat="server" ID="LabelTitle"></asp:Literal>
+                            Medio
+                        </h2>            
+                        <asp:HyperLink runat="server" NavigateUrl="ListaMedio.aspx">
+                            Volver a la Lista Medio
+                        </asp:HyperLink>
 
-            <div class="row">
-                <div class="col-12">
-                    <h1>
-                        <asp:Literal runat="server" ID="LabelTitle"></asp:Literal>
-                        Negocio
-                    </h1>
-                    <asp:HyperLink runat="server" NavigateUrl="ListaLineaNegocio.aspx">
-                            Volver a la Lista de Negocios
-                    </asp:HyperLink>
-
-                    <asp:Panel ID="PanelError" runat="server" Visible="false" CssClass="alert alert-danger" role="alert">
-                        <asp:Literal ID="MsgLiteral" runat="server"></asp:Literal>
-                    </asp:Panel>
+                        <asp:Panel ID="PanelError" runat="server" Visible="false" CssClass="alert alert-danger" role="alert">
+                            <asp:Literal ID="MsgLiteral" runat="server"></asp:Literal>
+                        </asp:Panel>
+                    </div>
                 </div>
-            </div>
+                
 
-
-
-            <div class="row">
-                <div class="col-6">
-                    <div class="form-group">
-                        <asp:Label runat="server" AssociatedControlID="NombreTextBox">Nombre</asp:Label>
-                        <asp:TextBox ID="NombreTextBox" runat="server" CssClass="form-control"></asp:TextBox>
-                        <div class="text-danger">
-                            <asp:RequiredFieldValidator runat="server" Display="Dynamic"
-                                ErrorMessage="Debe ingresar el nombre"
-                                ValidationGroup="Producto"
-                                ControlToValidate="NombreTextBox">
-                            </asp:RequiredFieldValidator>
+                
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <asp:Label runat="server" AssociatedControlID="NombreTextBox">Nombre</asp:Label>
+                            <asp:TextBox ID="NombreTextBox" runat="server" CssClass="form-control"></asp:TextBox>
+                            <div class="text-danger">
+                                <asp:RequiredFieldValidator runat="server" Display="Dynamic"
+                                    ErrorMessage="Debe ingresar el nombre"
+                                    ValidationGroup="Producto"
+                                    ControlToValidate="NombreTextBox">
+                                </asp:RequiredFieldValidator>
+                            </div>
                         </div>
-                    </div>
+            
 
-
-                    <div class="form-group">
-                        <label>Descripcion</label>
-                        <asp:TextBox ID="descripcionTextBox" runat="server" CssClass="form-control"></asp:TextBox>
-                        <div class="text-danger">
-                            <asp:RequiredFieldValidator runat="server" Display="Dynamic"
-                                ErrorMessage="Debe ingresar el la descripcion del Negocio"
-                                ValidationGroup="Producto"
-                                ControlToValidate="descripcionTextBox">
-                            </asp:RequiredFieldValidator>
-                        </div>
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label>Empresa: </label>
-                        
-                        <label runat="server" ID="EmpresaLabel" Font-Bold="true"></label>
 
                         <div class="form-group">
                             <asp:LinkButton ID="SaveButton" runat="server" OnClick="SaveButton_Click"
@@ -128,17 +114,15 @@
                         </div>
                     </div>
                 </div>
-                <asp:HiddenField ID="NegocioIdHiddenField" runat="server" Value="0" />
-                <asp:HiddenField runat="server" ID="EmpresaIdHD" />
-        </form>
+                <asp:HiddenField ID="ciudadIdHiddenField" runat="server" Value="0" />
+            </form>
         <asp:Label ID="msgError" runat="server" BorderColor="White"></asp:Label>
-    </div>
+     </div>
 
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
+           <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+           <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+           <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
 </body>
 </html>
